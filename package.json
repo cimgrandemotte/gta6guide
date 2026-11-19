@@ -1,0 +1,41 @@
+{
+  "name": "gta6-ultimate-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GTA VI — The Ultimate Guide | Site statique complet : 28 pages HTML, 513 faits sourcés, 246 sources, 109 illustrations JPG originales, 12 MP3. Livré en S7.",
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.js",
+    "start": "node tools/serve.js",
+    "check:yaml": "python3 -c \"import yaml,sys; yaml.safe_load(open('workflow_master.yaml')); print('workflow_master.yaml: YAML valide')\"",
+    "check:links": "node tools/check_links.js",
+    "audio": "python3 tools/make_audio.py",
+    "audio:s3": "python3 tools/make_audio_s3.py",
+    "research:build": "python3 tools/build_research_data.py",
+    "research:patch-s2": "python3 tools/patch_research_s2.py && python3 tools/build_research_data.py",
+    "research:patch-s3": "python3 tools/patch_research_s3.py",
+    "research:rebuild": "python3 tools/build_research_data.py && python3 tools/patch_research_s2.py && python3 tools/patch_research_s3.py",
+    "assets:optimize": "python3 tools/optimize_images.py",
+    "assets:optimize-s3": "python3 tools/optimize_images_s3.py",
+    "check:s2": "python3 tools/check_s2.py",
+    "check:s3": "python3 tools/check_s3.py",
+    "check:s4": "python3 tools/check_s4.py",
+    "images:s4": "python3 tools/optimize_images_s4.py",
+    "research:patch-s4": "python3 tools/patch_research_s4.py",
+    "check:all": "node tools/check_links.js && python3 tools/check_s2.py && python3 tools/check_s3.py && python3 tools/check_s4.py && python3 tools/audit_s6.py",
+    "audit:s6": "python3 tools/audit_s6.py",
+    "build:s6": "python3 tools/build_s6.py",
+    "serve": "node tools/serve.js"
+  },
+  "keywords": [
+    "gta6",
+    "gta-vi",
+    "leonida",
+    "vice-city",
+    "guide",
+    "rockstar",
+    "fan-guide"
+  ],
+  "license": "UNLICENSED",
+  "note": "Site statique : aucune dépendance npm requise pour le dev. Les outils audio Python nécessitent numpy + lameenc, voir README.md."
+}

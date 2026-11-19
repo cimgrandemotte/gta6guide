@@ -1,0 +1,22 @@
+{
+  "name": "GTA VI — The Ultimate Guide",
+  "short_name": "GTA VI Guide",
+  "description": "Fan guide francophone non officiel de GTA VI : Leonida, Vice City, faits sourcés et médias originaux.",
+  "lang": "fr",
+  "start_url": "index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#FF2D78",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/images/heroes/homepage_hero_sunset_ocean_drive_01.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

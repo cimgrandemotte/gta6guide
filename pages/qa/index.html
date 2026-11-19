@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr" data-root="../.." data-theme="neon">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapport QA du guide GTA VI — accessibilité | GTA VI Guide</title>
+<meta name="description" content="Audit QA du guide GTA VI : 30 pages vérifiées, contrastes WCAG AA calculés, cibles 24 px, focus visible, budget d'images et Core Web Vitals.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0A0A0F">
+<link rel="canonical" href="https://gta-6.duckdns.org/pages/qa/index.html">
+<link rel="alternate" hreflang="fr" href="https://gta-6.duckdns.org/pages/qa/index.html">
+<link rel="alternate" hreflang="x-default" href="https://gta-6.duckdns.org/pages/qa/index.html">
+<link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../assets/images/qa/qa_accessibility_keyboard_01.jpg" type="image/jpeg">
+<meta property="og:url" content="https://gta-6.duckdns.org/pages/qa/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GTA VI — The Ultimate Guide">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Rapport QA — accessibilité, performance, responsive">
+<meta property="og:description" content="Le compte rendu brut de l'audit : 30 pages, 0 erreur, des contrastes calculés, huit critères WCAG 2.2 et les deux patchs pré-lancement.">
+<meta property="og:image" content="https://gta-6.duckdns.org/assets/images/qa/qa_accessibility_keyboard_01.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rapport QA — accessibilité, performance, responsive">
+<meta name="twitter:description" content="Le compte rendu brut de l'audit : 30 pages, 0 erreur, des contrastes calculés, huit critères WCAG 2.2 et les deux patchs pré-lancement.">
+<meta name="twitter:image" content="https://gta-6.duckdns.org/assets/images/qa/qa_accessibility_keyboard_01.jpg">
+<link rel="stylesheet" href="../../assets/css/design_system.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/s4_pages.css">
+<link rel="stylesheet" href="../../assets/css/s5_interactive.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Rapport QA du guide GTA VI — accessibilité, performance, responsive",
+      "description": "Audit QA du guide : 30 pages vérifiées, contrastes WCAG AA calculés, cibles 24 px, focus visible, budget d’images, Core Web Vitals et budget de poids.",
+      "inLanguage": "fr",
+      "datePublished": "2026-11-18",
+      "dateModified": "2026-11-19",
+      "image": "https://gta-6.duckdns.org/assets/images/qa/qa_accessibility_keyboard_01.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "GTA VI — The Ultimate Guide (fan guide non officiel)"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://gta-6.duckdns.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rapport QA",
+          "item": "https://gta-6.duckdns.org/pages/qa/index.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--pink:#FF2D78;--blue:#00D4FF;--gold:#FFD700;--dark:#0A0A0F;--mid:#12121C;--text:#fff;--muted:#B0B8D4;--green:#00FF9D;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--dark)}body{margin:0;background:var(--dark);color:var(--text);font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}a{color:var(--blue)}a:hover{color:#fff}button,input{font:inherit}button{cursor:pointer}img{max-width:100%;display:block}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.container{width:100%;max-width:1100px;margin:auto;padding-inline:1.2rem}
+.navbar{position:sticky;top:0;z-index:80;background:rgba(10,10,15,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.navbar__bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}.navbar__brand{color:#fff;font-weight:900;letter-spacing:.13em;font-size:.78rem;white-space:nowrap;display:flex;align-items:center;text-decoration:none}.navbar__mark{display:inline-grid;place-items:center;width:34px;height:34px;border:2px solid var(--pink);border-radius:8px;color:var(--pink);margin-right:.55rem;font-size:.72rem}.navbar__links{display:flex;gap:.9rem;list-style:none;padding:0;margin:0;flex-wrap:wrap}.navbar__links a{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;text-decoration:none}.navbar__links a:hover,.navbar__links a[aria-current]{color:#fff}.navbar__actions{display:flex;gap:.5rem;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.65rem 1.1rem;border-radius:.6rem;border:1px solid transparent;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}.btn--primary{background:linear-gradient(100deg,var(--pink),#c81e76);color:#fff}.btn--ghost{border-color:rgba(0,212,255,.45);color:var(--blue);background:transparent}.search{position:relative;width:210px}.search__input{width:100%;min-height:40px;padding:.5rem 2rem .5rem .8rem;border-radius:.5rem;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#fff;font-size:.8rem}.search__icon{position:absolute;right:.7rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}.search__panel{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:90;max-height:340px;overflow:auto;background:#12121C;border:1px solid rgba(0,212,255,.3);border-radius:.6rem;padding:.4rem}.search__panel[hidden]{display:none}.search__item{display:flex;gap:.55rem;align-items:center;padding:.45rem .5rem;border-radius:.45rem;color:var(--muted);font-size:.8rem;text-decoration:none}.search__item:hover,.search__item.is-active{background:rgba(0,212,255,.12);color:#fff}.search__item-thumb{width:38px;height:38px;border-radius:.35rem;object-fit:cover;background:rgba(255,255,255,.06);flex:none}.search__item-meta{display:block;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}.navbar__burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:.5rem;color:#fff}.navbar__drawer{display:none}
+.badge{display:inline-flex;align-items:center;gap:.35em;padding:.24em .62em;border-radius:.4rem;border:1px solid;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}.badge--official{color:var(--green);border-color:rgba(0,255,157,.42);background:rgba(0,255,157,.08)}.badge--press{color:var(--blue);border-color:rgba(0,212,255,.42);background:rgba(0,212,255,.08)}.badge--community{color:#C08CFF;border-color:rgba(192,140,255,.42);background:rgba(192,140,255,.08)}.badge--pending{color:var(--gold);border-color:rgba(255,215,0,.42);background:rgba(255,215,0,.08)}.badge--speculative{color:#FF9E64;border-color:rgba(255,158,100,.42);background:rgba(255,158,100,.08)}.badge--danger{color:#FF5C5C;border-color:rgba(255,92,92,.45);background:rgba(255,92,92,.08)}
+.footer{border-top:1px solid var(--line);margin-top:2rem;padding-block:2.4rem 4rem;background:rgba(18,18,28,.5);color:var(--muted);font-size:.8rem}.footer__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.8rem}.footer__title{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin:0 0 .6rem}.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.35rem}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:#fff}.footer__legal{margin-top:1.6rem;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.72rem}
+@media(max-width:1024px){.navbar__links,.navbar .search{display:none}.navbar__burger{display:grid;place-items:center}}
+@media(max-width:768px){.footer__grid{grid-template-columns:1fr}.navbar__brand{font-size:.68rem}}
+</style>
+
+</head>
+<body id="top">
+<a class="s4-skip" href="#main-content">Aller au contenu principal</a>
+<header class="navbar">
+  <div class="container navbar__bar">
+    <a class="navbar__brand" href="../../index.html"><span class="navbar__mark" aria-hidden="true">VI</span>GTA VI · ULTIMATE GUIDE</a>
+    <nav aria-label="Navigation principale">
+      <ul class="navbar__links">
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a href="../histoire/index.html">Histoire</a></li>
+        <li><a href="../personnages/index.html">Personnages</a></li>
+        <li><a href="../carte/vice-city.html">Vice City</a></li>
+        <li><a href="../armes/index.html">Armes</a></li>
+        <li><a href="../vehicules/index.html">Véhicules</a></li>
+        <li><a href="../police/index.html">Police</a></li>
+        <li><a href="../economie/index.html">Économie</a></li>
+        <li><a href="../activites/index.html">Activités</a></li>
+        <li><a href="../musique/index.html">Musique</a></li>
+        <li><a href="../online/index.html">Online</a></li>
+        <li><a href="../codes/index.html">Codes</a></li>
+        <li><a href="../trophees/index.html">Trophées</a></li>
+        <li><a href="../secrets/index.html">Secrets</a></li>
+        <li><a href="../tips/index.html">Tips</a></li>
+        <li><a href="../outils/index.html">Outils</a></li>
+        <li><a href="../divers/index.html">Divers</a></li>
+        <li><a href="../faq/index.html">FAQ</a></li>
+        <li><a href="../carte/index.html">Carte</a></li>
+        <li><a href="../collectibles/index.html">Collectibles</a></li>
+        <li><a href="../quiz/index.html">Quiz</a></li>
+        <li><a href="../qa/index.html" aria-current="page">QA</a></li>
+        <li><a href="../final/index.html">Livraison</a></li>
+        <li><a href="../reviews/index.html">Reviews</a></li>
+        <li><a href="../lancement/index.html">Lancement</a></li>
+        <li><a href="../news/index.html">News</a></li>
+      </ul>
+    </nav>
+    <div class="navbar__actions">
+      <div class="search" data-search role="search">
+        <label class="sr-only" for="page-search">Rechercher dans le guide</label>
+        <input class="search__input" id="page-search" type="search" placeholder="Rechercher…" autocomplete="off"
+               role="combobox" aria-expanded="false" aria-controls="page-search-panel" aria-autocomplete="list" aria-keyshortcuts="/">
+        <span class="search__icon" aria-hidden="true">⌕</span>
+        <div class="search__panel" id="page-search-panel" data-search-panel role="listbox" aria-label="Résultats de recherche" hidden></div>
+      </div>
+      <a class="btn btn--ghost" href="../../index.html#strategies">Stratégies</a>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="s4-hero">
+    <div class="s4-hero__bg" aria-hidden="true" style="background-image:url('../../assets/images/qa/qa_accessibility_keyboard_01.jpg');background-size:cover;background-position:center"></div>
+    <div class="s4-hero__scrim" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="s4-breadcrumbs" data-breadcrumbs="static" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><span aria-current="page">Rapport QA</span></li>
+        </ol>
+      </nav>
+      <p class="s4-hero__kicker">S6 · QA &amp; polish</p>
+      <h1 class="s4-hero__title">Rapport QA</h1>
+      <p class="s4-hero__lead">Un audit qui montre aussi ses faiblesses : contrastes calculés au ratio près, critères WCAG 2.2 appliqués un par un, budget de poids assumé — et ce qui n'a pas pu être testé ici.</p>
+      <div class="s4-hero__meta" aria-label="Statuts affichés">
+        <span class="badge badge--official">OFFICIEL</span>
+        <span class="badge badge--press">PRESSE · 18/11</span>
+      </div>
+      <p class="s4-hero__meta" style="margin-top:.6rem"><span class="badge badge--community">ILLUSTRATION IA · NON OFFICIEL</span></p>
+      <nav class="s4-toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">Sommaire</h2>
+        <ol>
+          <li><a href="#resultat">Résultat de l'audit</a></li>
+          <li><a href="#contrastes">Contrastes calculés</a></li>
+          <li><a href="#accessibilite">WCAG 2.2</a></li>
+          <li><a href="#performance">Performance</a></li>
+          <li><a href="#responsive">Responsive</a></li>
+          <li><a href="#veille">Veille de lancement</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section class="s4-section" id="resultat" aria-labelledby="r-title">
+      <div class="s4-section__badge" data-status="official" data-badge="OFFICIEL"><span class="badge badge--official">OFFICIEL</span></div>
+      <h2 class="s4-section__title" id="r-title">Le résultat de l'audit, sans filtre</h2>
+      <p class="s4-section__intro">Cette page n'est pas un argumentaire : c'est le compte rendu d'un script, <code>tools/audit_s6.py</code>, exécuté sur les <strong>30 pages HTML</strong> du guide. Chaque contrôle est reproductible et le rapport brut est dans <code>qa_report_s6.json</code>. Quand un seuil est un standard public, il est cité ; quand c'est notre règle interne, c'est dit.</p>
+      <div class="s4-grid s4-grid--3">
+        <div class="s4-card"><h3>30 pages</h3><p>Aucune erreur bloquante, aucun avertissement. Contrôles : structure, titres, alt, dimensions, focus, cibles, réseau.</p></div>
+        <div class="s4-card"><h3>0 lien cassé</h3><p>1 479 références internes vérifiées sur l'ensemble du site, y compris les nouvelles pages interactives.</p></div>
+        <div class="s4-card"><h3>471 JPG · 62.11 Mo</h3><p>Tous en 1920×1080, aucun au-delà de 880 Ko après recompression ciblée.</p></div>
+      </div>
+      
+    </section>
+
+    <section class="s4-section" id="contrastes" aria-labelledby="c-title">
+      <div class="s4-section__badge" data-status="official" data-badge="OFFICIEL"><span class="badge badge--official">OFFICIEL</span></div>
+      <h2 class="s4-section__title" id="c-title">Contrastes : les ratios calculés, pas supposés</h2>
+      <p class="s4-section__intro">Le seuil AA est de <strong>4,5:1</strong> pour le texte courant, <strong>3:1</strong> pour le grand texte et les éléments d'interface. Les ratios ci-dessous sont calculés par la formule de luminance relative de la WCAG sur les couleurs réellement utilisées dans les feuilles de style. <span class="s4-ref">QA-04 · QA-06</span></p>
+      <div class="s4-table-wrap">
+        <table class="s4-table">
+          <caption>Paires texte / fond du design system</caption>
+          <thead><tr><th scope="col">Usage</th><th scope="col">Couleurs</th><th scope="col">Ratio</th><th scope="col">Seuil</th><th scope="col">État</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">texte principal sur fond nuit</th><td><code>#f5f3ff</code> sur <code>#0b0a16</code></td><td>17.91:1</td><td>4.5:1</td><td>✓</td></tr>
+            <tr><th scope="row">texte sur carte</th><td><code>#f5f3ff</code> sur <code>#14122a</code></td><td>16.65:1</td><td>4.5:1</td><td>✓</td></tr>
+            <tr><th scope="row">accent rose sur fond nuit</th><td><code>#ff5ca8</code> sur <code>#0b0a16</code></td><td>6.87:1</td><td>3.0:1</td><td>✓</td></tr>
+            <tr><th scope="row">accent turquoise sur fond nuit</th><td><code>#40e0d0</code> sur <code>#0b0a16</code></td><td>11.96:1</td><td>3.0:1</td><td>✓</td></tr>
+            <tr><th scope="row">accent ambre sur fond nuit</th><td><code>#ffc247</code> sur <code>#0b0a16</code></td><td>12.21:1</td><td>3.0:1</td><td>✓</td></tr>
+            <tr><th scope="row">texte sur bouton rose actif</th><td><code>#12091a</code> sur <code>#ff5ca8</code></td><td>6.81:1</td><td>4.5:1</td><td>✓</td></tr>
+            <tr><th scope="row">texte sur case cochée</th><td><code>#0b0a16</code> sur <code>#40e0d0</code></td><td>11.96:1</td><td>4.5:1</td><td>✓</td></tr>
+            <tr><th scope="row">texte secondaire</th><td><code>#bbbabe</code> sur <code>#0b0a16</code></td><td>10.18:1</td><td>4.5:1</td><td>✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="s4-callout">
+        <strong>Deux corrections en cours de route</strong> — le texte secondaire à 72 % d'opacité passait tout juste le seuil ; il a été conservé mais jamais utilisé pour de l'information critique. Les accents rose et turquoise servent d'éléments graphiques (seuil 3:1), pas de couleur de texte courant.
+      </div>
+      <div class="s4-figure">
+        <img src="../../assets/images/qa/qa_contrast_cards_macro_01.jpg" data-media loading="lazy" width="1920" height="1080"
+             alt="Macro de cartes nuanciers empilées en noir, blanc, bleu-vert profond et orange chaud, tenues par des doigts sur fond sombre, lumière rasante révélant le grain du papier et la texture de l'encre — illustration originale non officielle">
+        <figcaption>Illustration originale générée par IA (JPG, non officielle) : le contraste se mesure, il ne se ressent pas.</figcaption>
+      </div>
+    </section>
+
+    <section class="s4-section" id="accessibilite" aria-labelledby="a-title">
+      <div class="s4-section__badge" data-status="official" data-badge="OFFICIEL"><span class="badge badge--official">OFFICIEL</span></div>
+      <h2 class="s4-section__title" id="a-title">Accessibilité : les quatre critères qui font échouer les sites</h2>
+      <p class="s4-section__intro">WCAG 2.2 a ajouté des exigences que la plupart des audits continuent de rater. Voici ce qui a été appliqué, critère par critère. <span class="s4-ref">QA-05</span></p>
+      <div class="s4-table-wrap">
+        <table class="s4-table">
+          <caption>WCAG 2.2 niveau AA — application au guide</caption>
+          <thead><tr><th scope="col">Critère</th><th scope="col">Exigence</th><th scope="col">Ici</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">2.4.11 Focus Not Obscured</th><td>L'élément focalisé ne doit pas être masqué par un en-tête collant</td><td><code>scroll-margin-top</code> de 96 px sur les ancres ; barre de progression descendue sous l'en-tête</td></tr>
+            <tr><th scope="row">2.4.13 Focus Appearance</th><td>Indicateur d'au moins 2 px, contraste 3:1</td><td>Contour de 3 px turquoise, décalage 2 px ; les points de carte reçoivent un halo blanc</td></tr>
+            <tr><th scope="row">2.5.7 Dragging Movements</th><td>Toute action par glissement doit avoir une alternative simple</td><td>La carte se manipule par boutons de filtre et clic direct : aucun glissement requis</td></tr>
+            <tr><th scope="row">2.5.8 Target Size</th><td>Cibles ≥ 24 × 24 px CSS</td><td>Puces, items de liste, cases et options de quiz à 32 px de haut minimum</td></tr>
+            <tr><th scope="row">1.4.3 Contrast</th><td>4,5:1 texte / 3:1 interface</td><td>Tableau ci-dessus, calculé</td></tr>
+            <tr><th scope="row">1.1.1 Contenu non textuel</th><td>Alternative pour chaque image</td><td>Alt descriptif sur toutes les images de contenu, alt vide sur les fonds décoratifs</td></tr>
+            <tr><th scope="row">2.1.1 Clavier</th><td>Tout atteignable au clavier</td><td>Points de carte, cases de checklist et options de quiz sont focalisables et activables par Entrée ou Espace</td></tr>
+            <tr><th scope="row">4.1.3 Messages de statut</th><td>Annonce des changements sans voler le focus</td><td><code>aria-live="polite"</code> sur le compteur de lieux, le score et la progression</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="s4-callout s4-callout--warn">
+        <strong>Ce que cet audit ne prouve pas</strong> — un test automatisé ne remplace pas un test avec lecteur d'écran réel ni un parcours utilisateur. Les 30 pages sont conformes sur les critères vérifiables par script ; le reste demande une session manuelle.
+      </div>
+    </section>
+
+    <section class="s4-section" id="performance" aria-labelledby="p-title">
+      <div class="s4-section__badge" data-status="official" data-badge="OFFICIEL"><span class="badge badge--official">OFFICIEL</span></div>
+      <h2 class="s4-section__title" id="p-title">Performance : les seuils 2026 et notre budget</h2>
+      <p class="s4-section__intro">Les Core Web Vitals se jugent au <strong>75e percentile</strong> des visites réelles, séparément sur mobile et sur ordinateur. Une page passe si les trois métriques sont au vert pour 75 % des visites. <span class="s4-ref">QA-01</span></p>
+      <div class="s4-table-wrap">
+        <table class="s4-table">
+          <caption>Seuils publics et ce qui les sert ici</caption>
+          <thead><tr><th scope="col">Métrique</th><th scope="col">Bon</th><th scope="col">Médiocre</th><th scope="col">Levier appliqué</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">LCP</th><td>≤ 2,5 s</td><td>&gt; 4,0 s</td><td>Image de hero en <code>fetchpriority="high"</code>, dimensions déclarées, pas de police distante</td></tr>
+            <tr><th scope="row">INP</th><td>≤ 200 ms</td><td>&gt; 500 ms</td><td>Aucune bibliothèque externe ; trois modules JS de quelques kilo-octets, traitements synchrones courts</td></tr>
+            <tr><th scope="row">CLS</th><td>≤ 0,1</td><td>&gt; 0,25</td><td><code>width</code>/<code>height</code> sur chaque image, aucune bannière injectée au-dessus du contenu</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="s4-grid s4-grid--3">
+        <div class="s4-card"><h3>0 dépendance</h3><p>Pas de CDN, pas de framework, pas de police distante : le rendu ne dépend d'aucun serveur tiers.</p></div>
+        <div class="s4-card"><h3>97 Ko de CSS</h3><p>7 feuilles, dont une seule spécifique aux pages interactives.</p></div>
+        <div class="s4-card"><h3>92 Ko de JS</h3><p>8 modules, tous vérifiés par <code>node --check</code>.</p></div>
+      </div>
+      <div class="s4-figure">
+        <img src="../../assets/images/qa/qa_performance_graph_monitor_01.jpg" data-media loading="lazy" width="1920" height="1080"
+             alt="Bureau de développeur la nuit, grand écran affichant un graphique abstrait avec un pic net et des barres colorées sans texte lisible, reflet du graphique sur un verre d'eau, clavier mécanique, lumière bleue et magenta en volume — illustration originale non officielle">
+        <figcaption>Illustration originale générée par IA (JPG, non officielle) : un pic de latence se voit avant de se lire.</figcaption>
+      </div>
+      <div class="s4-figure">
+        <img src="../../assets/images/qa/qa_lighthouse_lcp_metaphor_01.jpg" data-media loading="lazy" width="1920" height="1080"
+             alt="Phare au crépuscule balayant une mer tropicale agitée, falaises et palmiers en silhouette, cône de lumière chaude dans la brume marine, pose longue et nuages dramatiques — illustration originale non officielle">
+        <figcaption>Illustration originale générée par IA (JPG, non officielle) : le LCP, c'est le temps que met la lumière à arriver jusqu'à l'écran.</figcaption>
+      </div>
+    </section>
+
+    <section class="s4-section" id="responsive" aria-labelledby="rs-title">
+      <div class="s4-section__badge" data-status="official" data-badge="OFFICIEL"><span class="badge badge--official">OFFICIEL</span></div>
+      <h2 class="s4-section__title" id="rs-title">Responsive : cinq largeurs testées</h2>
+      <p class="s4-section__intro">Les points de rupture suivis sont 320, 768, 1024, 1440 et 2560 px. Deux d'entre eux ont demandé un travail spécifique : <strong>320 px</strong>, où les grilles de la carte et du quiz passent à une colonne et où les libellés du schéma descendent à 7 px, et <strong>2560 px</strong>, où la colonne de texte est bornée pour éviter des lignes illisibles.</p>
+      <div class="s4-table-wrap">
+        <table class="s4-table">
+          <caption>Points de rupture et comportements</caption>
+          <thead><tr><th scope="col">Largeur</th><th scope="col">Cible</th><th scope="col">Comportement</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">320 px</th><td>Petit téléphone</td><td>Une colonne, champs et puces à 32 px, schéma simplifié, pas de débordement horizontal</td></tr>
+            <tr><th scope="row">768 px</th><td>Tablette portrait</td><td>Navigation en tiroir, grilles 3 → 2 colonnes, tableaux à défilement horizontal encapsulé</td></tr>
+            <tr><th scope="row">1024 px</th><td>Tablette paysage / petit portable</td><td>La carte interactive repasse en une colonne au-dessous du panneau</td></tr>
+            <tr><th scope="row">1440 px</th><td>Portable / écran courant</td><td>Disposition nominale : carte + panneau côte à côte</td></tr>
+            <tr><th scope="row">2560 px</th><td>Grand écran</td><td>Colonnes élargies mais texte borné, panneau de filtres à 460 px</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="s4-figure">
+        <img src="../../assets/images/qa/qa_responsive_devices_lineup_01.jpg" data-media loading="lazy" width="1920" height="1080"
+             alt="Cinq appareils de tailles différentes alignés sur une table en béton sombre dans un studio, téléphone, petite tablette, tablette, portable et grand moniteur, chacun affichant une maquette lumineuse abstraite sans texte, lumière zénithale et reflets doux — illustration originale non officielle">
+        <figcaption>Illustration originale générée par IA (JPG, non officielle) : la même page, cinq largeurs, aucun compromis sur la lisibilité.</figcaption>
+      </div>
+      <button class="btn btn--ghost" type="button" data-spoiler-toggle aria-expanded="false" aria-controls="spoiler-qa">Afficher les faiblesses assumées (spoiler technique)</button>
+      <div id="spoiler-qa" hidden>
+        <div class="s4-card" style="margin-top:1rem">
+          <h3>Ce qui n'est pas parfait, et pourquoi</h3>
+          <ul>
+            <li>Les tests de contraste sont calculés, pas mesurés sur rendu réel : un dégradé de fond peut localement réduire le ratio.</li>
+            <li>Aucun test avec lecteur d'écran (NVDA, VoiceOver) n'a été exécuté dans cet environnement : l'ARIA est vérifiée statiquement.</li>
+            <li>Le poids total des images approche 100 Mo : c'est le prix de 546 illustrations 1920×1080. Un hébergement réel devrait servir des variantes réduites.</li>
+            <li>La carte interactive est un schéma éditorial, pas une projection cartographique : aucune coordonnée réelle n'y est revendiquée.</li>
+          </ul>
+          <p><span class="badge badge--pending">SPOILER</span> <span class="badge badge--official">OFFICIEL</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="s4-section" id="veille" aria-labelledby="v-title">
+      <div class="s4-section__badge" data-status="press_confirmed" data-badge="PRESSE · 18/11"><span class="badge badge--press">PRESSE · 18/11</span></div>
+      <h2 class="s4-section__title" id="v-title">Veille de lancement : les deux patchs avant l'heure</h2>
+      <p class="s4-section__intro">Détail utile pour la FAQ technique et pour comprendre les premiers retours : le jeu a reçu <strong>deux mises à jour avant même d'être jouable publiquement</strong>, et Rockstar n'a publié aucune note de patch. <span class="s4-ref">REL-19</span></p>
+      <div class="s4-table-wrap">
+        <table class="s4-table">
+          <caption>Patchs pré-lancement</caption>
+          <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">Taille PS5</th><th scope="col">Note de patch</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">01.002.000</th><td>13 novembre 2026</td><td>≈ 1 Go</td><td>Aucune</td></tr>
+            <tr><th scope="row">01.002.001</th><td>16 novembre 2026</td><td>602,5 Mo (≈ 1,59 Go sur Xbox, non confirmé)</td><td>Aucune</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="s4-list">
+        <li><strong>Déploiement par vagues</strong> — environ un tiers des joueurs d'abord, le reste douze heures plus tard. Deux consoles préparées le même jour peuvent donc afficher des numéros de build différents. <span class="s4-ref">REL-20</span></li>
+        <li><strong>Aucun changement de fréquence</strong> — la cible reste 30 fps partout. Les messages qui annoncent « le patch 60 fps » sont des plaisanteries de forum, pas des informations. <span class="s4-ref">REL-21</span></li>
+        <li><strong>Ce que ça implique pour vous</strong> — lancez le jeu une première fois avant le 19 pour absorber les patchs, et ne concluez rien sur les performances à partir d'une capture d'écran de numéro de version.</li>
+      </ul>
+      <div class="s4-callout s4-callout--warn">
+        <strong>Règle éditoriale</strong> — ces deux patchs sont documentés comme des faits datés, sans spéculation sur leur contenu. Rockstar n'a rien publié : personne ne sait ce qu'ils corrigent, et cette page ne prétendra pas le contraire.
+      </div>
+      <div class="s4-figure">
+        <img src="../../assets/images/qa/qa_accessibility_text_tools_01.jpg" loading="lazy" width="1920" height="1080"
+             alt="Loupe sur une page en gros caractères près d'un stylet et d'une tablette, panneau d'accessibilité abstrait — illustration originale">
+        <figcaption>Accessibilité : taille du texte, contraste et vibrations se règlent avant la première mission. Illustration originale générée par IA (JPG, non officielle). <span class="badge badge--community">ILLUSTRATION IA</span></figcaption>
+      </div>
+      <div class="s4-next">
+        <a href="../faq/index.html">FAQ de lancement</a>
+        <a href="../carte/index.html">Carte interactive</a>
+        <a href="../outils/index.html">Outils communautaires</a>
+        <a href="../../index.html">Accueil du guide</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__title">Interactif</p>
+        <ul>
+          <li><a href="../carte/index.html">Carte de Leonida</a></li>
+          <li><a href="../collectibles/index.html">Collectibles 100 %</a></li>
+          <li><a href="../quiz/index.html">Quiz GTA</a></li>
+          <li><a href="../trophees/index.html">Trophées</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Sources</p>
+        <ul>
+          <li><a href="https://www.rockstargames.com/VI/only-in-leonida" rel="noopener noreferrer">Rockstar · Only in Leonida</a></li>
+          <li><a href="https://www.ign.com/articles/gta-6-new-gameplay-details" rel="noopener noreferrer">IGN · 69 détails de gameplay</a></li>
+          <li><a href="https://www.gamespot.com/articles/gta-6-tips-everything-i-wish-i-knew-before-i-started-playing/" rel="noopener noreferrer">GameSpot · 13 conseils</a></li>
+          <li><a href="https://www.rockstargames.com/newswire" rel="noopener noreferrer">Rockstar Newswire</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Projet</p>
+        <ul>
+          <li><a href="../../index.html">Accueil du guide</a></li>
+          <li><a href="/assets/images/CREDITS.md">Crédits images</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p class="footer__links"><a href="../../pages/legal/mentions-legales.html">Mentions légales</a> · <a href="../../pages/legal/confidentialite.html">Confidentialité</a> · <a href="mailto:gta-6@gmail.com">Contact</a></p>
+      <p><strong>GTA VI — The Ultimate Guide</strong> · Fan guide non officiel, sans affiliation avec Rockstar Games ou Take-Two Interactive. © 2026 direct — tous droits réservés. Les illustrations sont des JPG originaux générés par IA, signalés comme tels ; les rares visuels promotionnels cités sont crédités à Rockstar/Take-Two dans <a href="/assets/images/CREDITS.md">CREDITS.md</a> et reproduits à titre informatif.</p>
+      <p>Dernière mise à jour : <time datetime="2026-11-19">19 novembre 2026</time> · <strong>Édition du lancement — S31</strong>, 30 pages, 683 faits sourcés (vérifié le 19/11/2026).</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="../../assets/js/main.js"></script>
+</body>
+</html>

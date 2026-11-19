@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   animations.css — S2 / DESIGN_SYSTEM
+   Effets cinématographiques : GlitchText, ParallaxHero, NeonGlow, ScanLines,
+   FloatingParticles, CardHover3D, TypewriterIntro, SmoothScroll, LoadingScreen,
+   CursorCustom, WantedPulse.
+
+   100 % CSS + Canvas JS. AUCUN SVG / PNG / GIF n'est utilisé :
+   scanlines = repeating-linear-gradient, curseur = div + pseudo-éléments,
+   particules = <canvas>, reflets = dégradés.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Keyframes ─────────────────────────────────────────────────────────────── */
+@keyframes a-fade-up      { from { opacity: 0; transform: translate3d(0, 34px, 0); } to { opacity: 1; transform: none; } }
+@keyframes a-fade-in      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes a-zoom-in      { from { opacity: 0; transform: scale(.93); } to { opacity: 1; transform: none; } }
+@keyframes a-slide-right  { from { opacity: 0; transform: translate3d(-30px,0,0); } to { opacity: 1; transform: none; } }
+@keyframes a-float        { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(1.2deg); } }
+@keyframes a-neon-pulse   { 0%,100% { opacity: .55; filter: brightness(1); } 50% { opacity: 1; filter: brightness(1.35); } }
+@keyframes a-gradient-flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes a-scan         { from { transform: translateY(-100%); } to { transform: translateY(100vh); } }
+@keyframes a-shimmer      { from { transform: translateX(-120%); } to { transform: translateX(220%); } }
+@keyframes a-glitch-1 {
+  0%, 92%, 100% { clip-path: inset(0 0 0 0); transform: none; }
+  93% { clip-path: inset(12% 0 62% 0); transform: translateX(-5px); }
+  95% { clip-path: inset(58% 0 18% 0); transform: translateX(6px); }
+  97% { clip-path: inset(32% 0 44% 0); transform: translateX(-3px); }
+}
+@keyframes a-glitch-2 {
+  0%, 92%, 100% { clip-path: inset(0 0 0 0); transform: none; }
+  94% { clip-path: inset(70% 0 8% 0); transform: translateX(4px); }
+  96% { clip-path: inset(20% 0 56% 0); transform: translateX(-6px); }
+  98% { clip-path: inset(46% 0 30% 0); transform: translateX(3px); }
+}
+@keyframes a-caret        { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes a-wanted-pulse { 0%,100% { transform: scale(1); text-shadow: 0 0 10px currentColor; } 50% { transform: scale(1.12); text-shadow: 0 0 24px currentColor; } }
+@keyframes a-spin         { to { transform: rotate(360deg); } }
+@keyframes a-progress     { from { width: 0%; } to { width: 100%; } }
+@keyframes a-ticker       { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes a-whoosh       { 0% { opacity: 0; transform: translateX(-14px) skewX(-8deg); } 100% { opacity: 1; transform: none; } }
+@keyframes a-glow-sweep   { 0% { left: -40%; } 100% { left: 140%; } }
+
+/* ── Révélations au scroll (pilotées par animations.js / IntersectionObserver) ─ */
+.reveal { opacity: 0; will-change: opacity, transform; transition: opacity var(--t-slow), transform var(--t-slow); transform: translate3d(0, 34px, 0); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal[data-reveal="fade"] { transform: none; }
+.reveal[data-reveal="zoom"] { transform: scale(.93); }
+.reveal[data-reveal="left"] { transform: translate3d(-30px, 0, 0); }
+.reveal.is-visible[data-reveal="zoom"] { transform: none; }
+.reveal--delay-1 { transition-delay: 90ms; }
+.reveal--delay-2 { transition-delay: 180ms; }
+.reveal--delay-3 { transition-delay: 270ms; }
+.reveal--delay-4 { transition-delay: 360ms; }
+
+/* ── GlitchText ───────────────────────────────────────────────────────────── */
+.glitch { position: relative; display: inline-block; isolation: isolate; }
+.glitch::before, .glitch::after {
+  content: attr(data-text); position: absolute; inset: 0; pointer-events: none;
+  background: inherit; -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.glitch::before { color: var(--c-secondary); text-shadow: -2px 0 var(--c-secondary); animation: a-glitch-1 5.5s infinite steps(1); opacity: .85; }
+.glitch::after  { color: var(--c-primary);   text-shadow:  2px 0 var(--c-primary);   animation: a-glitch-2 5.5s infinite steps(1) .18s; opacity: .85; }
+.glitch--active::before { animation-duration: .55s; }
+.glitch--active::after  { animation-duration: .55s; }
+
+/* ── NeonGlow ─────────────────────────────────────────────────────────────── */
+.neon-glow { animation: a-neon-pulse 3.6s ease-in-out infinite; }
+.hover-glow { transition: box-shadow var(--t-base), text-shadow var(--t-base), transform var(--t-fast); }
+.hover-glow:hover { box-shadow: var(--glow-pink); text-shadow: 0 0 18px rgba(255,45,120,.7); }
+.hover-glow--blue:hover { box-shadow: var(--glow-blue); text-shadow: 0 0 18px rgba(0,212,255,.7); }
+.grad-animated { background: linear-gradient(100deg, var(--c-primary), var(--c-secondary), var(--c-violet), var(--c-primary)); background-size: 300% 100%; animation: a-gradient-flow 9s ease-in-out infinite; }
+
+/* ── ScanLines (overlay rétro, pure CSS) ──────────────────────────────────── */
+.scanlines { position: fixed; inset: 0; z-index: var(--z-scanlines); pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.024) 0 1px, transparent 1px 4px); opacity: .55; }
+.scanlines__beam { position: absolute; inset: 0 0 auto; height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,.045), transparent); animation: a-scan 9s linear infinite; }
+.vignette { position: fixed; inset: 0; pointer-events: none; z-index: var(--z-scanlines);
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.55) 100%); }
+
+/* ── ParallaxHero ─────────────────────────────────────────────────────────── */
+.parallax { position: relative; overflow: hidden; isolation: isolate; }
+.parallax__layer { position: absolute; inset: -8% 0; will-change: transform; }
+.parallax__layer--back  { z-index: -3; }
+.parallax__layer--mid   { z-index: -2; }
+.parallax__layer--front { z-index: -1; }
+.parallax__content { position: relative; z-index: 1; }
+
+/* ── FloatingParticles (canvas) ───────────────────────────────────────────── */
+#particles-canvas { position: fixed; inset: 0; z-index: var(--z-particles); pointer-events: none; }
+
+/* ── CardHover3D ──────────────────────────────────────────────────────────── */
+.tilt-card { transform-style: preserve-3d; transition: transform var(--t-base), box-shadow var(--t-base); will-change: transform; }
+.tilt-card > * { transform: translateZ(18px); }
+.tilt-card:hover { box-shadow: var(--shadow-lg), 0 0 30px rgba(255,45,120,.18); }
+.tilt-card__sheen { position: absolute; inset: 0; overflow: hidden; pointer-events: none; border-radius: inherit; }
+.tilt-card__sheen::after { content: ''; position: absolute; top: 0; bottom: 0; width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.09), transparent); transform: skewX(-18deg); }
+.tilt-card:hover .tilt-card__sheen::after { animation: a-glow-sweep 900ms ease-out; }
+
+/* ── TypewriterIntro ──────────────────────────────────────────────────────── */
+.typewriter { min-height: 1.6em; font-family: var(--font-mono); }
+.typewriter__caret { display: inline-block; width: .55ch; background: var(--c-primary); color: transparent; animation: a-caret 1s steps(1) infinite; }
+
+/* ── LoadingScreen ────────────────────────────────────────────────────────── */
+.loading-screen { position: fixed; inset: 0; z-index: var(--z-loading); display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 40%, #191031, var(--c-bg-dark) 65%); transition: opacity 520ms ease, visibility 520ms; }
+.loading-screen.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+.loading-screen__inner { width: min(420px, 82vw); text-align: center; }
+.loading-screen__logo { font: 400 clamp(3rem, 9vw, 5.4rem)/1 var(--font-display); letter-spacing: .06em;
+  background: var(--grad-hero-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.loading-screen__sub { font: 700 .62rem/1.6 var(--font-ui); letter-spacing: var(--tracking-mega); color: var(--c-secondary); text-transform: uppercase; margin-top: var(--sp-3); }
+.loading-screen__track { height: 4px; margin-top: var(--sp-6); border-radius: var(--r-pill); background: rgba(255,255,255,.1); overflow: hidden; }
+.loading-screen__bar { height: 100%; width: 0%; border-radius: inherit; background: var(--grad-neon); box-shadow: var(--glow-pink); transition: width 140ms linear; }
+.loading-screen__pct { margin-top: var(--sp-3); font: 700 .7rem/1 var(--font-mono); color: var(--c-text-secondary); letter-spacing: .1em; }
+.loading-screen__skip { margin-top: var(--sp-5); font-size: var(--fs-micro); letter-spacing: .16em; text-transform: uppercase; color: var(--c-text-secondary); }
+
+/* ── CursorCustom (div + pseudo-éléments, aucun SVG) ──────────────────────── */
+.cursor-reticle { position: fixed; top: 0; left: 0; width: 30px; height: 30px; z-index: var(--z-cursor);
+  border: 1px solid rgba(0,212,255,.75); border-radius: 50%; pointer-events: none; opacity: 0;
+  transform: translate3d(-100px,-100px,0); transition: opacity 200ms ease, width 160ms, height 160ms, border-color 160ms;
+  box-shadow: 0 0 12px rgba(0,212,255,.35), inset 0 0 10px rgba(0,212,255,.12); }
+.cursor-reticle.is-active { opacity: 1; }
+.cursor-reticle.is-hover { width: 44px; height: 44px; border-color: var(--c-primary); box-shadow: var(--glow-pink); }
+.cursor-reticle::before, .cursor-reticle::after { content: ''; position: absolute; background: currentColor; color: var(--c-secondary); }
+.cursor-reticle::before { width: 1px; height: 9px; top: -5px; left: 50%; }
+.cursor-reticle::after  { width: 9px; height: 1px; left: -5px; top: 50%; }
+.cursor-reticle.is-hover::before, .cursor-reticle.is-hover::after { color: var(--c-primary); }
+body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button { cursor: none; }
+
+/* ── Étoiles de recherche (Wanted) ────────────────────────────────────────── */
+.wanted-stars { display: inline-flex; gap: .18em; color: var(--c-accent); font-size: 1.1rem; }
+.wanted-stars .star { animation: a-wanted-pulse 1.8s ease-in-out infinite; }
+.wanted-stars .star:nth-child(2) { animation-delay: .12s; }
+.wanted-stars .star:nth-child(3) { animation-delay: .24s; }
+.wanted-stars .star:nth-child(4) { animation-delay: .36s; }
+.wanted-stars .star:nth-child(5) { animation-delay: .48s; }
+.wanted-stars .star:nth-child(6) { animation-delay: .6s; }
+.wanted-stars--red { color: var(--c-danger); }
+
+/* ── Divers ───────────────────────────────────────────────────────────────── */
+.spinner { width: 22px; height: 22px; border: 2px solid rgba(255,255,255,.18); border-top-color: var(--c-primary); border-radius: 50%; animation: a-spin .8s linear infinite; }
+.shimmer { position: relative; overflow: hidden; }
+.shimmer::after { content: ''; position: absolute; inset: 0; width: 40%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.07), transparent); transform: skewX(-15deg); animation: a-shimmer 2.4s infinite; }
+.ticker-track { display: flex; width: max-content; animation: a-ticker 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.whoosh-in { animation: a-whoosh var(--t-slow) both; }
+.float-slow { animation: a-float 6s ease-in-out infinite; }
+
+/* ── Respect de prefers-reduced-motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .scanlines__beam, .ticker-track, .neon-glow, .grad-animated, .float-slow,
+  .glitch::before, .glitch::after, .wanted-stars .star, .shimmer::after { animation: none !important; }
+  .cursor-reticle, #particles-canvas { display: none !important; }
+  body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button { cursor: auto; }
+  .tilt-card { transform: none !important; }
+}

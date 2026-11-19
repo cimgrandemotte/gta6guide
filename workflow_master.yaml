@@ -1,0 +1,1074 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# GTA VI — THE ULTIMATE GUIDE
+# WORKFLOW MASTER — référence unique du build (source de vérité)
+# Généré en S0 le 2026-11-18 (Europe/Paris) — J-1 avant la sortie du 19/11/2026
+# Toute divergence entre ce fichier et un message de l'agent : ce fichier gagne.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  project: "GTA VI — The Ultimate Guide"
+  slogan: "Leonida Awaits. Are You Ready?"
+  prompt_source: "MegaPrompt v3.0 (XML)"
+  author: "Arena.ai Agent — Autonomous Build"
+  language_primary: fr
+  language_secondary: en
+  tone: "Épique, immersif, cinématographique, expert gaming"
+  generated_at: "2026-11-18"
+  timezone: Europe/Paris
+  game_release_date: "2026-11-19"
+  build_context: "J-1 : le jeu sort demain. Le build est PRE-LAUNCH."
+  project_root: /home/user/gta6-ultimate-guide
+  download_hint: "https://arena.ai/agent/download-workspace"
+  fsm:
+    current_state: S4
+    status: IN_PROGRESS
+    gate: "FIN"
+    history:
+      - { state: S0, at: "2026-11-18", result: COMPLETE }
+      - { state: S1, at: "2026-11-18", result: COMPLETE, facts: 201, sources: 86, contradictions: 10 }
+      - { state: S2, at: "2026-11-18", result: COMPLETE, facts: 283, sources: 114, contradictions: 14, jpg: 10, mp3: 10 }
+      - { state: S3, at: "2026-11-18", result: COMPLETE, facts: 303, sources: 135, contradictions: 18, jpg: 20, mp3: 12, html_pages: 2 }
+      - { state: S4, at: "2026-11-19", result: COMPLETE, groups: 7, pages: 20, facts: 489, sources: 225, jpg: 89, mp3: 12, html_pages: 21, broken_links: 0 }
+      - { state: S5, at: "2026-11-19", result: COMPLETE, pages: 3, facts: 507, sources: 240, jpg: 99, mp3: 12, html_pages: 24, broken_links: 0 }
+      - { state: S6, at: "2026-11-19", result: COMPLETE, pages_audited: 27, errors: 0, facts: 513, sources: 246, jpg: 104, mp3: 12, html_pages: 27, broken_links: 0 }
+      - { state: S7, at: "2026-11-19", result: COMPLETE, html: 28, facts: 513, sources: 246, jpg: 109, mp3: 12, broken_links: 0, gate: FIN }
+      - { state: S8, at: "2026-11-19", result: COMPLETE, event: EMBARGO_LIFTED, html: 29, facts: 527, sources: 253, jpg: 114, mp3: 12, broken_links: 0 }
+      - { state: S9, at: "2026-11-18", result: COMPLETE, event: LAUNCH_NIGHT, html: 30, pages_content: 28, facts: 540, sources: 261, jpg: 119, mp3: 12, sitemap_urls: 36, broken_links: 0 }
+      - { state: S10, at: "2026-11-18", result: COMPLETE, event: REAL_ASSETS, html: 30, jpg_total: 362, object_images: 203, animal_images: 27, maps: 3, duplicate_images: 0, broken_links: 0 }
+      - { state: S11, at: "2026-11-18", result: COMPLETE, event: POST_LAUNCH_RADIO, html: 30, facts: 544, sources: 264, images_total: 370, duplicates: 0, broken_links: 0 }
+      - { state: S12, at: "2026-11-18", result: COMPLETE, event: PUBLISH_READY, html: 30, facts: 554, sources: 270, images_total: 384, duplicates: 0, broken_links: 0, sitemap_urls: 34 }
+      - { state: S13, at: "2026-11-18", result: COMPLETE, event: FINAL_PUBLISH, html: 31, facts: 558, sources: 274, images_total: 394, duplicates: 0, broken_links: 0, sitemap_urls: 35, page_404: true }
+      - { state: S14, at: "2026-11-18", result: COMPLETE, event: DEEP_MECHANICS, html: 32, facts: 563, sources: 277, images_total: 403, duplicates: 0, broken_links: 0 }
+      - { state: S15, at: "2026-11-19", result: COMPLETE, event: PLAYER_FEEDBACK, html: 32, facts: 568, sources: 282, images_total: 412, duplicates: 0, broken_links: 0 }
+      - { state: S16, at: "2026-11-19", result: COMPLETE, event: SAFE_CODES, html: 32, facts: 571, sources: 285, images_total: 421, duplicates: 0, broken_links: 0 }
+      - { state: S17, at: "2026-11-19", result: COMPLETE, event: FINAL_POLISH, html: 32, facts: 574, sources: 287, images_total: 431, duplicates: 0, broken_links: 0, html_valid: true }
+      - { state: S18, at: "2026-11-19", result: COMPLETE, event: SETTINGS, html: 32, facts: 577, sources: 292, images_total: 441, duplicates: 0, broken_links: 0 }
+      - { state: S19, at: "2026-11-19", result: COMPLETE, event: DAY_MINUS_ONE, html: 32, facts: 590, sources: 302, images_total: 451, duplicates: 0, broken_links: 0, titles_over_70: 0 }
+      - { state: S20, at: "2026-11-19", result: COMPLETE, event: LAUNCH_DAY, html: 32, facts: 599, sources: 309, images_total: 461, duplicates: 0, broken_links: 0, titles_over_70: 0 }
+      - { state: S21, at: "2026-11-19", result: COMPLETE, event: DAY_ONE_PULSE, html: 32, facts: 604, sources: 313, images_total: 471, duplicates: 0, broken_links: 0, titles_over_70: 0 }
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 0. CONSTITUTION — règles absolues, non négociables
+# ─────────────────────────────────────────────────────────────────────────────
+constitution:
+  no_zip: true
+  no_pdf: true
+  images_format: jpg
+  audio_format: mp3
+  max_images_per_response: 10
+  max_audio_per_response: 10
+  web_research_at_every_state: true
+  autonomy: "Totale à l'intérieur d'un état."
+  continue_gate: "Demandé UNIQUEMENT aux transitions S0→S1→…→S7."
+  no_pause_inside_state: true
+  legal: "Site non officiel — Fan Guide. GTA VI © Rockstar Games / Take-Two Interactive."
+  image_honesty: >-
+    Les visuels sont des illustrations originales générées par IA, inspirées de
+    l'esthétique néon Vice City. Elles ne sont PAS des screenshots officiels
+    Rockstar et ne doivent jamais être présentées comme tels.
+  user_reinforcement_2026_11_18: >-
+    Rappel utilisateur à l'entrée de S1 : TOUTES les images générées doivent être
+    des JPG HAUTE QUALITÉ, photoréalistes, cinématographiques et immersives.
+    INTERDICTION ABSOLUE de produire des SVG ou des PNG en tant qu'images générées
+    (les SVG inline restent autorisés uniquement comme éléments d'interface/UI,
+    jamais comme fichiers image livrés). ≤ 10 images par réponse, ≤ 10 audios
+    par réponse. Ces contraintes s'appliquent à S2, S3, S4, S5 et S6.
+  fact_integrity: >-
+    RÈGLE SUPÉRIEURE À TOUTE AUTRE : aucune information d'après-lancement
+    (missions exactes, fins, codes de triche, trophées, collectibles, easter eggs
+    découverts, scores définitifs, modes Online) ne peut être inventée ou publiée
+    comme « vérifiée ». Chaque donnée porte un statut (voir fact_policy).
+    Les sections non disponibles sont livrées avec un état « À compléter après le
+    19/11/2026 » et une structure de données prête à recevoir les infos.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1. POLITIQUE DE VÉRACITÉ — cadrage issu de la recherche S0
+# ─────────────────────────────────────────────────────────────────────────────
+fact_policy:
+  statuses:
+    official: "Confirmé par Rockstar / Take-Two / PlayStation / Xbox (source primaire)."
+    press_confirmed: "Repris par plusieurs médias spécialisés crédibles, source primaire citée."
+    community: "Cartographie / base de données communautaire (à recouper)."
+    leak_unverified: "Fuite ou rumeur — à n'afficher qu'avec badge explicite, jamais comme fait."
+    post_launch_pending: "N'existe pas encore légalement ; page structurée, contenu en attente."
+    speculative: "Estimation / projection éditoriale, explicitement étiquetée."
+  ui_rule: "Chaque fiche, tableau et carte affiche un badge de statut visible."
+  json_rule: "research_data.json attache {value, status, source_url, retrieved_at} à CHAQUE fait."
+  s2_press_rule: "Copies de review du 18/11/2026 = press_confirmed ; Rockstar seul = official. SpoilerToggle + badge obligatoires."
+  known_unavailable_at_s0:
+    - "Liste exhaustive et officielle des missions (noms, synopsis, stratégies)"
+    - "Fins alternatives"
+    - "Codes de triche officiels (publiés à la sortie)"
+    - "Liste complète des trophées / succès"
+    - "Collectibles et leurs localisations"
+    - "Easter eggs découverts par la communauté"
+    - "GTA VI Online : modes, missions, économie (non annoncé)"
+    - "Scores Metacritic définitifs (embargo levé le 18/11/2026 seulement)"
+  s0_verified_snapshot:
+    - fact: "Sortie officielle : jeudi 19 novembre 2026, déblocage à minuit heure locale."
+      status: official
+      source: "Rockstar Newswire (6 nov. 2025) + Support Rockstar, via Wikipedia et gta6hype.com"
+    - fact: "Plateformes natives : PS5, PS5 Pro, Xbox Series X|S. Aucun PC annoncé (Q1 2027 = rumeur de presse)."
+      status: official
+      source: "Wikipedia GTA VI, gamenewsplus.net"
+    - fact: "Xbox One peut y jouer via Xbox Cloud Gaming (annonce Xbox du 10/11/2026)."
+      status: press_confirmed
+      source: "Wikipedia GTA VI (§ Release)"
+    - fact: "Prix US : Standard 79,99 $ / Ultimate 99,99 $ (digital uniquement pour Ultimate)."
+      status: official
+      source: "Rockstar Store ; gtaboss.gg ; thepcenthusiast.com (25/06/2026)"
+    - fact: "Bonus précommande : Vintage Vice City Pack + 1 mois de GTA+ (digital)."
+      status: official
+      source: "gtaboss.gg ; neoteo.com (12/11/2026)"
+    - fact: "Préchargement depuis le 10/11/2026, jusqu'à 212 Go selon la machine."
+      status: official
+      source: "Rockstar Customer Support / Newswire"
+    - fact: "Protagonistes jouables : Jason Duval & Lucia Caminos. Lucia = 1ère femme lead principal d'un GTA mainline."
+      status: official
+      source: "Rockstar GTA VI official site ; gtaboss.gg"
+    - fact: "6 régions : Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park."
+      status: official
+      source: "Rockstar ; upcomer.com ; vice-city.app"
+    - fact: "8 profils officiels / 9 personnes nommées : Jason, Lucia, Cal Hampton, Boobie Ike, Dre'Quan Priest, Real Dimez (Bae-Luxe & Roxy), Raul Bautista, Brian Heder."
+      status: official
+      source: "gtaboss.gg ; gta.fandom.com"
+    - fact: "Compositeur du score : Justice. Moteur : RAGE. Producteur : Rob Nelson."
+      status: press_confirmed
+      source: "Wikipedia GTA VI (infobox)"
+    - fact: "Embargo critiques levé le 18/11/2026 ; Metascore 99 (100 reviews PS5) = INSTANTANÉ, susceptible d'évoluer."
+      status: press_confirmed
+      source: "Dexerto, KeenGamer, playstationinfo.de (18/11/2026) — à re-vérifier en S1/S6"
+    - fact: "Rockstar décrit GTA VI comme une expérience SOLO ; aucun GTA VI Online daté ni détaillé."
+      status: official
+      source: "Rockstar Newswire 'Pre-Order GTA VI' ; Yahoo/Tech (16/11/2026)"
+  prompt_corrections:
+    - claim: "Pas de version Xbox One"
+      correction: "Vrai en natif, faux via Xbox Cloud Gaming (annonce du 10/11/2026). À préciser sur P16."
+    - claim: "GTA VI Online — modes, missions, économie"
+      correction: "Non annoncé officiellement. P14 doit être un hub 'statut officiel + spéculations étiquetées'."
+    - claim: "Liste de ~22 PNJ (Dr Ansel Moreau, Viktor Sokolov, Shérif Clyde Bodine…)"
+      correction: "Seuls 8 profils officiels confirmés ; le reste = leaks/communauté/noms non vérifiés. À trier en S1."
+    - claim: "Carte 2× GTA V, 3× RDR2, 5 comtés, 62 espèces d'oiseaux, citation Rob Nelson juillet 2026"
+      correction: "Estimations communautaires non sourcées primairement. À vérifier en S1, sinon badge 'estimation'."
+    - claim: "Métadonnées type 'toutes les missions / tous les cheats / tous les trophées'"
+      correction: "Indisponibles à J-1. Voir known_unavailable_at_s0."
+    - claim: "Ambiances musicales synthwave, thèmes de personnages, moteur V8 en MP3"
+      correction: "Les outils disponibles synthétisent des MP3 par génération de signaux (NumPy + lameenc), PAS de musique produite ni d'enregistrements réels. Les pistes seront des nappes/effets sonores originaux, étiquetés comme tels. La voix off (generate_speech) reste possible en MP3."
+    - claim: "10 images JPG 'style officiel Rockstar'"
+      correction: "Illustrations originales IA, jamais présentées comme captures officielles. Voir constitution.image_honesty."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 1bis. RÉSULTAT DE LA RECHERCHE S1 — arbitrages complémentaires
+# ─────────────────────────────────────────────────────────────────────────────
+research_s1:
+  deliverables:
+    - research_data.json           # 201 faits, 19 sections, 86 sources
+    - research_sources.md          # inventaire + tiers + pièges
+    - research_findings.md         # synthèse FR lisible
+    - tools/build_research_data.py # générateur rejouable
+  event_major: >-
+    L'embargo critiques a été levé le 18/11/2026 vers 11:00 GMT. Une masse de
+    données de gameplay est désormais vérifiable via copies de review et previews
+    accréditées, ce qui enrichit considérablement S3/S4 par rapport au cadrage S0.
+  upgraded_status:
+    - "Carte 2× GTA V / 3× RDR2 : community → press_confirmed (Rob Nelson à TGG, août 2026 ; EDGE ; NYT)."
+    - "Justice compositeur : official (Newswire 29/10/2026)."
+    - "5 chapitres, ~100 missions, 50–80 h : press_confirmed (reviews du 18/11)."
+    - "Système 6 étoiles + indices HUD : official/press_confirmed (Extended Look + reviews)."
+    - "Carburant, coffre d'armes, 2 longues + 2 poings, Focus, poids/fatigue : official/press_confirmed."
+  still_unverified:
+    - "62 espèces d'oiseaux, 5 comtés, 11 districts de Vice City : aucune source primaire → ne pas afficher."
+    - "201 missions (remus_r) : rumeur."
+    - "200+ véhicules : décompte de fans (185 / 172 / 110 / ~100 selon les bases)."
+    - "Liste de trophées : deux listes incompatibles, aucune officielle."
+    - "« Waning Sands » et les ~40 PNJ de leonidaverse : carte « imagined » pré-lancement."
+  integrity_flags:
+    - "GrandTheft.gg publie des guides de localisation le 18/11 (avant accès public) → non vérifié."
+    - "Une vidéo YouTube « 100% Walkthrough Part 1 » est datée du 15/11 → origine douteuse."
+    - "Le DOM du Rockstar Store FR répète la liste Ultime sous Standard → artefact de parsing."
+    - "Certaines pages de résultats sont indexées au 19/11 (fuseau NZ) alors que nous sommes le 18/11."
+  build_consequences:
+    - "Homepage : compteurs autorisés sur 6 régions / 2 protagonistes / 6 étoiles / 6 stations / 5 chapitres uniquement."
+    - "P05 : séparer « Cast officiel (8 profils) » et « PNJ communautaires / non confirmés »."
+    - "P06/S5 : couche de base = 6 régions officielles ; couche optionnelle reconstruction GTADB créditée CC BY 4.0."
+    - "P08/P09 : badges de statut + mention « chiffres à compléter après le 19/11 »."
+    - "P14 : hub de statut solo, aucune fiche de mode inventée."
+    - "P18 : réellement alimentable (Newswire, météo Weather Channel, firmware PS5, Metascore horodaté, Game Awards)."
+    - "S2 : les 10 JPG restent des illustrations IA originales ; pas de réutilisation de screenshots Rockstar."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# 1ter. AMENDEMENT S2 — recherche post-embargo vérifiée le 18/11/2026
+# ─────────────────────────────────────────────────────────────────────────────
+research_s2:
+  event_major: >-
+    Après la levée d'embargo du 18/11/2026, des médias accrédités ayant joué sur
+    copies de review publient cheats, 93 missions, 55 trophées, checklist 100 %,
+    astuces de braquage, économie, 6 étoiles et direction artistique. Correction
+    du cadrage S1 : ces données sont press_confirmed, JAMAIS official Rockstar.
+  deliverables:
+    - assets/css/design_system.css
+    - assets/css/animations.css
+    - assets/css/components.css
+    - assets/css/responsive.css
+    - assets/js/components.js
+    - assets/js/animations.js
+    - assets/images/** (10 JPG haute qualité)
+    - assets/audio/** (10 MP3 originaux)
+    - design_system.md
+    - research_s2_addendum.md
+    - assets/images/CREDITS.md
+    - assets/audio/CREDITS.md
+    - tools/optimize_images.py
+    - tools/patch_research_s2.py
+    - tools/check_s2.py
+  metrics:
+    facts: 283
+    sections: 20
+    sources: 114
+    contradictions_arbitrated: 14
+    mega_prompt_corrections: 12
+    s2_press_missions: 93
+    jpg: 10
+    mp3: 10
+    forbidden_files: 0
+  direct_fetch_sources:
+    - "https://www.gamespot.com/articles/all-gta-6-cheats-and-how-to-unlock-them/"
+    - "https://www.gamespot.com/articles/gta-6-tips-everything-i-wish-i-knew-before-i-started-playing/"
+    - "https://www.gamespot.com/articles/gta-6-safe-codes-and-robberies-guide/"
+    - "https://press-start.com.au/news/2026/11/18/every-grand-theft-auto-6-cheat-how-to-unlock/"
+    - "https://press-start.com.au/news/2026/11/18/tips-for-managing-your-money-in-grand-theft-auto-6/"
+    - "https://press-start.com.au/news/2026/11/18/gta-6-trophy-list/"
+    - "https://press-start.com.au/news/2026/11/18/heres-how-many-story-missions-are-in-grand-theft-auto-6/"
+    - "https://press-start.com.au/news/2026/11/18/grand-theft-auto-6-100-percent-checklist/"
+    - "https://www.trueachievements.com/news/grand-theft-auto-6-review"
+    - "https://www.sportskeeda.com/gta/how-get-6-star-wanted-level-gta-6-and-escape-police"
+    - "https://www.independent.co.uk/extras/indybest/gadgets-tech/video-games-consoles/gta-6-live-b3085508.html"
+    - "https://newswav.com/article/gta-6-launch-live-latest-updates-as-fans-gear-up-for-release-A2611_rPPMKu"
+    - "https://www.gadgets360.com/games/news/gta-6-review-roundup-highest-rated-game-of-all-time-metacritic-ocarina-of-time-rockstar-games-12344575"
+    - "https://opencritic.com/news/39914/gta-6-is-officially-the-best-reviewed-game-of-all-time-on-metacritic"
+    - "https://rockstarintel.com/new-gta-vi-update-released-and-not-everyone-has-gotten-it-heres-why/"
+    - "https://github.com/mendesjf86/gta6-leonida-atlas"
+  art_direction_tokens:
+    - "--c-sunset: #FF8A3D — couchers de soleil orange (PCMag, 18/11/2026)"
+    - "--c-violet: #8B5CF6 — néon violet crépusculaire"
+    - "--c-pastel: #FFB8D9 — façades Art déco pastel"
+    - "--c-teal: #2DE1C2 — lagon des Leonida Keys"
+    - "--c-deep-purple: #2A1B4D — ciel de crépuscule"
+  arbitrations:
+    - "Cheats GameSpot vs Press-Start : divergences de conditions et de séquences → badge 'divergence presse'."
+    - "93 missions (story recap Press-Start) vs ~100 (arrondi TrueAchievements) → retenir 93."
+    - "OpenCritic 98 (fiche directe + Gadgets360) vs 99 (roundups) → retenir 98, 100 % recommandent."
+    - "Safe codes ALÉATOIRES : interdire toute liste statique de codes de coffre."
+    - "Mike Zero / Mile Zero : deux graphies de presse, à recouper in-game."
+  design_consequences:
+    - "P11/P12/P17/P20 : badges press_confirmed + SpoilerToggle fermé par défaut."
+    - "P06/S5 : 6 régions officielles + couche presse + couche communautaire GTADB distinctes."
+    - "P18 : firmware PS5, patch 1.002.001, Metacritic 99 / 146 critiques, OpenCritic 98 / 54."
+    - "Tous les JPG = illustrations IA originales, jamais captures officielles."
+    - "Tous les MP3 = signaux synthétiques originaux, aucun sample sous licence."
+  asset_qa:
+    jpg_dimensions: ["1920x1080 paysage", "1280x1920 portrait 2:3"]
+    jpeg_quality: 95
+    formats_forbidden: ["PNG", "SVG", "WebP", "AVIF", "WAV", "ZIP", "PDF"]
+    breakpoints: [320, 768, 1024, 1440, 2560]
+  integrity_rule: "Aucune liste de presse post-embargo n'est promue official. Publication officielle Rockstar + recoupement PSN/Xbox restent post_launch_pending."
+
+
+# 2. MACHINE À ÉTATS
+# ─────────────────────────────────────────────────────────────────────────────
+state_machine:
+
+  S0:
+    name: INIT
+    objective: "Lire le prompt, écrire le workflow, initialiser l'arborescence, le package.json et l'index racine."
+    inputs: [MegaPrompt v3.0, "recherche web de cadrage"]
+    deliverables:
+      - workflow_master.yaml
+      - state.json
+      - package.json
+      - index.html            # placeholder S0, remplacé en S3
+      - README.md             # version S0, enrichie en S7
+      - tools/serve.js        # serveur statique 0 dépendance, bind 0.0.0.0
+      - tools/make_audio.py   # synthèse MP3 (NumPy + lameenc)
+      - vercel.json / netlify.toml / .github/workflows/deploy.yml
+      - "arborescence complète (36 dossiers) + .gitkeep"
+    checkpoint:
+      - "workflow_master.yaml présent et valide YAML"
+      - "Tous les dossiers de FileStructure existent"
+      - "Aucun ZIP / PDF / PNG / WebP / WAV produit"
+      - "package.json + index racine servent sans dépendance externe"
+    exit_gate: 'Demander "CONTINUER" → S1'
+    next: S1
+
+  S1:
+    name: RESEARCH
+    objective: "Collecte exhaustive et sourcée ; compilation de research_data.json."
+    inputs: [sources_tiers_1_4, "recherche temps réel obligatoire"]
+    deliverables:
+      - research_data.json        # {value, status, source_url, retrieved_at} par fait
+      - research_sources.md       # inventaire des sources + fiabilité
+      - "tableau officiel / community / leak / post_launch_pending"
+    checkpoint:
+      - "Chaque fait possède statut + source + date"
+      - "Contradictions du prompt arbitrées (prompt_corrections)"
+      - "Aucune donnée d'après-lancement fabriquée"
+      - "Périmètre presse/critiques (Metascore) daté du 18/11/2026"
+    exit_gate: 'Résumé des points clés + demander "CONTINUER" → S2'
+    next: S2
+
+  S2:
+    name: DESIGN_SYSTEM
+    objective: "Tokens, composants, animations + 1er lot d'assets."
+    inputs: [design_system_spec, research_data.json]
+    deliverables:
+      - assets/css/design_system.css
+      - assets/css/animations.css
+      - assets/css/components.css
+      - assets/css/responsive.css
+      - assets/js/components.js
+      - assets/js/animations.js
+      - "assets/images/** : 10 JPG (lot IMG001–IMG010)"
+      - "assets/audio/** : 10 MP3 (lot AUD001–AUD010)"
+    checkpoint:
+      - "Palette #FF2D78 / #00D4FF / #FFD700 / #0A0A0F appliquée"
+      - "Contraste texte ≥ 4.5:1 (WCAG AA)"
+      - "10 JPG max, 10 MP3 max, aucun autre format — AUCUN SVG ni PNG comme image livrée"
+      - "Les 10 JPG sont haute qualité, photoréalistes, cinématographiques, immersifs"
+      - "Polices de repli système sans réseau pour l'aperçu in-app"
+      - "research_data.json : source_url sur 100 % des faits + 93 missions structurées"
+      - "QA assets : 10 JPG 1920x1080 / 1280x1920 q95 + 10 MP3, 0 format interdit"
+    exit_gate: 'Demander "CONTINUER" → S3'
+    next: S3
+
+  S3:
+    name: BUILD_CORE_PAGES
+    objective: "Homepage + navbar + footer + composants globaux."
+    inputs: [design_system, research_data.json, "lot images S2"]
+    deliverables:
+      - index.html (version définitive, remplace le placeholder S0)
+      - assets/js/main.js / search.js / utils.js
+      - "Composants : Navbar, Footer, SearchEngine, Breadcrumbs, ItemCard, StatBar, Tooltip, SpoilerToggle, CopyButton, BackToTop, CookieBanner, AudioPlayer"
+      - "JSON-LD VideoGame, Open Graph, Twitter Card, canonical, hreflang"
+    checkpoint:
+      - "Navigation clavier complète + ARIA sur interactifs"
+      - "Countdown J-1 fonctionnel, bascule en 'Lancer le Guide' après le 19/11"
+      - "Chiffres affichés conformes à research_data.json (pas de spéculation chiffrée)"
+    exit_gate: 'Demander "CONTINUER" → S4'
+    next: S4
+    max_assets: { images: 10, audio: 10 }
+
+  S4:
+    name: BUILD_CONTENT_PAGES
+    objective: "Toutes les pages de contenu, par groupes de 3."
+    inputs: [research_data.json, composants_S3]
+    deliverables: "Voir page_inventory (~60 fichiers HTML)."
+    batches:
+      - { group: G1, pages: [P01, P02, P03], images: 10 }
+      - { group: G2, pages: [P04, P05, P06], images: 10 }
+      - { group: G3, pages: [P07, P08, P09], images: 10 }
+      - { group: G4, pages: [P10, P11, P12], images: 10 }
+      - { group: G5, pages: [P13, P14, P15], images: 10 }
+      - { group: G6, pages: [P16, P17, P18], images: 10 }
+      - { group: G7, pages: [P19, P20, P21], images: 10, done: true }
+    checkpoint_per_batch:
+      - "≤ 10 JPG / ≤ 10 MP3 par réponse"
+      - "Fil d'Ariane + meta SEO + alt descriptifs sur chaque page"
+      - "Badges de statut sur toute donnée non officielle"
+      - "Sections indisponibles = état explicite, jamais de contenu inventé"
+    exit_gate: 'Demander "CONTINUER" après CHAQUE groupe de 3 pages'
+    status: COMPLETE
+    pages_shipped:
+      - pages/histoire/index.html
+      - pages/histoire/synopsis.html
+      - pages/histoire/missions.html
+      - pages/personnages/index.html
+      - pages/personnages/lucia.html
+      - pages/personnages/secondaires.html
+      - pages/carte/vice-city.html
+      - pages/armes/index.html
+      - pages/vehicules/index.html
+      - pages/police/index.html
+      - pages/economie/index.html
+      - pages/activites/index.html
+      - pages/musique/index.html
+      - pages/online/index.html
+      - pages/codes/index.html
+      - pages/trophees/index.html
+      - pages/secrets/index.html
+      - pages/tips/index.html
+      - pages/outils/index.html
+      - pages/divers/index.html
+      - pages/faq/index.html
+    next: S5
+
+  S5:
+    name: INTERACTIVE_FEATURES
+    objective: "Carte Leonida, filtres, quiz, moteur de recherche, comparateurs."
+    inputs: [page_inventory, research_data.json]
+    deliverables:
+      - assets/js/map_leonida.js   # Leaflet, marqueurs, filtres, recherche de lieux
+      - "Filtres armes / véhicules / personnages"
+      - "Quiz 30 questions (P19) avec score, timer, difficultés"
+      - "Checklist 100 % persistée en localStorage (P17)"
+      - "Calculateurs / comparateurs de stats"
+      - "search.js : autocomplete sur l'index de contenu"
+    checkpoint:
+      - "Dégradation gracieuse si Leaflet/CDN indisponible (aperçu sandbox)"
+      - "Aucun appel vers localhost depuis le code navigateur"
+      - "localStorage accessible au clavier, états ARIA"
+    status: COMPLETE
+    shipped:
+      - pages/carte/index.html (carte SVG 28 lieux, filtres, recherche)
+      - pages/collectibles/index.html (checklist 16 jalons, localStorage)
+      - pages/quiz/index.html (30 questions, 3 niveaux, chrono)
+    exit_gate: 'Demander "CONTINUER" → S6'
+    next: S6
+
+  S6:
+    name: QA_AND_POLISH
+    objective: "Responsive, perfs, liens, SEO, accessibilité."
+    inputs: [toutes_les_pages]
+    deliverables:
+      - sitemap.xml
+      - robots.txt
+      - manifest.json
+      - "rapport QA (liens cassés, alt manquants, contrastes, 320/768/1024/1440/2560px)"
+      - "CSS/JS minifiés de production"
+    checkpoint:
+      - "0 lien interne cassé"
+      - "Toutes les images ont width/height + loading=lazy + alt"
+      - "WCAG 2.1 AA : contraste, focus visible, ARIA, alt"
+      - "Toutes les URLs du sitemap existent"
+    status: COMPLETE
+    shipped:
+      - tools/audit_s6.py (contrastes calculés, a11y statique, budget, sitemap)
+      - tools/build_s6.py (dist/app.min.css + dist/js/*.min.js)
+      - qa_report_s6.json (rapport brut reproductible)
+      - pages/qa/index.html (rapport public)
+    exit_gate: 'Demander "CONTINUER" → S7'
+    next: S7
+
+  S7:
+    name: FINAL_DELIVERY
+    objective: "Livraison, README complet, déploiement, récapitulatif."
+    inputs: [projet_complet]
+    deliverables:
+      - README.md (version finale : structure, installation, 3 déploiements, crédits, MAJ contenu)
+      - "Récapitulatif + arborescence complète"
+      - "Rappel /download-workspace"
+    checkpoint:
+      - "Aucun ZIP, aucun PDF, aucun format interdit"
+      - "Tous les états S0→S7 tracés dans state.json"
+    status: COMPLETE
+    shipped:
+      - README.md (structure, installation, 3 déploiements, crédits, mise à jour)
+      - pages/final/index.html (récapitulatif S0→S7, index des 25 sous-pages)
+    exit_gate: FIN
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 3. DÉPENDANCES ENTRE PAGES
+# ─────────────────────────────────────────────────────────────────────────────
+dependency_graph:
+  global:
+    design_system.css: [toutes_les_pages]
+    components.css: [toutes_les_pages]
+    animations.css: [toutes_les_pages]
+    responsive.css: [toutes_les_pages]
+    main.js: [toutes_les_pages]
+    components.js: [Navbar, Footer, ItemCard, StatBar, AudioPlayer]
+    animations.js: [GlitchText, ParallaxHero, FloatingParticles, SmoothScroll, TypewriterIntro]
+  chains:
+    - "S1 research_data.json → S3 homepage (fiche technique, compteurs, news)"
+    - "S1 research_data.json → P05 (cast) → P03/P04 (graphe de relations)"
+    - "S1 research_data.json → P06 carte → P07/P20 (régions, collectibles)"
+    - "S5 map_leonida.js → P06 + P20 (carte partagée)"
+    - "S5 search.js → recherche globale de toutes les pages"
+    - "S3 composants → toutes les pages S4"
+    - "S6 sitemap.xml ← inventaire exhaustif de page_inventory"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 4. INVENTAIRE DES PAGES (cible S4)
+# ─────────────────────────────────────────────────────────────────────────────
+page_inventory:
+  P01: { file: index.html, priority: CRITICAL, state: S3, hub: Accueil }
+  P02: { file: pages/histoire/index.html, priority: HIGH, state: S4 }
+  P02b: { file: pages/histoire/synopsis.html }
+  P02c: { file: pages/histoire/missions.html, status: post_launch_pending }
+  P02d: { file: pages/histoire/fins.html, status: post_launch_pending }
+  P03: { file: pages/personnages/jason.html, priority: HIGH, state: S4 }
+  P04: { file: pages/personnages/lucia.html, priority: HIGH, state: S4 }
+  P05: { file: pages/personnages/secondaires.html, status: tri_officiel_requis }
+  P05b: { file: pages/personnages/index.html }
+  P06: { file: pages/carte/index.html, priority: CRITICAL, state: S5 }
+  P06b: [pages/carte/vice-city.html, pages/carte/leonida-keys.html, pages/carte/grassrivers.html, pages/carte/port-gellhorn.html, pages/carte/ambrosia.html, pages/carte/mount-kalaga.html]
+  P07: { file: pages/carte/vice-city.html, priority: HIGH }
+  P08: { file: pages/armes/index.html, priority: HIGH, status: post_launch_pending }
+  P08b: [pages/armes/pistolets.html, pages/armes/fusils.html, pages/armes/explosifs.html, pages/armes/melee.html, pages/armes/armes-speciales.html]
+  P09: { file: pages/vehicules/index.html, priority: HIGH, status: post_launch_pending }
+  P09b: [pages/vehicules/voitures.html, pages/vehicules/motos.html, pages/vehicules/bateaux.html, pages/vehicules/avions.html, pages/vehicules/helicopteres.html, pages/vehicules/electriques.html]
+  P10: { file: pages/gameplay/index.html, priority: HIGH }
+  P10b: [pages/gameplay/mecaniques.html, pages/gameplay/police.html, pages/gameplay/economie.html, pages/gameplay/combat.html, pages/gameplay/conduite.html]
+  P11: { file: pages/guide/cheats.html, priority: HIGH, status: post_launch_pending }
+  P12: { file: pages/guide/astuces.html, priority: HIGH }
+  P13: { file: pages/secrets/easter-eggs.html, status: post_launch_pending }
+  P14: { file: pages/online/index.html, status: non_annonce_officiellement }
+  P15: { file: pages/soundtrack/index.html }
+  P16: { file: pages/editions/index.html }
+  P17: { file: pages/guide/100-pour-cent.html, status: post_launch_pending }
+  P18: { file: pages/news/index.html, priority: HIGH }
+  P19: { file: pages/quiz/index.html, priority: LOW }
+  P20: { file: pages/collectibles/index.html, status: post_launch_pending }
+  extras:
+    - pages/histoire/index.html
+    - pages/guide/index.html
+    - pages/guide/debutants.html
+    - pages/guide/trophees.html
+    - pages/collectibles/localisation.html
+    - pages/secrets/index.html
+    - pages/secrets/glitches.html
+    - pages/online/modes.html
+    - pages/online/missions-online.html
+    - pages/online/economie-online.html
+  total_html_files_target: 60
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 5. PLAN DES ASSETS
+# ─────────────────────────────────────────────────────────────────────────────
+asset_plan:
+  images:
+    format: jpg
+    convention: "[page]_[sujet]_[index].jpg"
+    base_style: "hyperréaliste, photoréaliste, cinématographique, néon Vice City, 16:9 héros / 2:3 personnages"
+    lot_s2:
+      - homepage_hero_vicecity_night_01.jpg
+      - characters_jason_fullbody_01.jpg
+      - characters_lucia_fullbody_01.jpg
+      - map_leonida_aerial_01.jpg
+      - weapons_arsenal_cinematic_01.jpg
+      - vehicles_lineup_vicecity_01.jpg
+      - gameplay_action_scene_01.jpg
+      - vicecity_districts_night_01.jpg
+      - leonida_keys_paradise_01.jpg
+      - mount_kalaga_epic_01.jpg
+    rule: "≤ 10 images par réponse, lots successifs en S3/S4/S5."
+  audio:
+    format: mp3
+    convention: "[page]_[type]_[index].mp3"
+    method: "Synthèse de signaux NumPy → encodage lameenc (outil tools/make_audio.py). Pas de musique sous licence, pas de samples Rockstar."
+    alternative: "generate_speech → voix off MP3 (si narration souhaitée)."
+    lot_s2:
+      - homepage_ambiance_vicecity_night_01.mp3
+      - homepage_ui_hover_01.mp3
+      - homepage_ui_click_01.mp3
+      - homepage_ui_transition_01.mp3
+      - characters_jason_theme_01.mp3
+      - characters_lucia_theme_01.mp3
+      - map_leonida_ambiance_01.mp3
+      - weapons_equip_sound_01.mp3
+      - vehicles_engine_v8_01.mp3
+      - quiz_correct_answer_01.mp3
+    rule: "≤ 10 MP3 par réponse."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 6. SOURCES (recherche obligatoire à CHAQUE état)
+# ─────────────────────────────────────────────────────────────────────────────
+sources:
+  tier_1_official:
+    - https://www.rockstargames.com/VI
+    - https://www.rockstargames.com/newswire
+    - https://store.rockstargames.com/fr/game/buy-gta-vi
+    - "Rockstar Games Customer Support (horaires de préchargement / déblocage)"
+    - "PlayStation Store / Microsoft Store (fiches produit)"
+    - "Take-Two Interactive — communiqués investisseurs"
+  tier_2_press:
+    - https://www.gamesradar.com/gta-6-guide/
+    - https://dotesports.com/gta/news/gta-6
+    - https://www.dexerto.com/gta/
+    - https://www.gtaboss.gg/gta-6/
+    - https://www.gtabase.com/grand-theft-auto-6/
+    - https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI
+    - "Metacritic / OpenCritic (post-embargo 18/11/2026)"
+  tier_3_community:
+    - https://gta6guide.fr/
+    - https://gta-6-wiki.com/fr/
+    - https://gta6bible.com/wiki/
+    - https://grandtheft.gg/
+    - https://gta6explained.com/
+    - https://leonidastate.guide/
+    - https://leonidaverse.com/en/gta-6-map
+    - https://www.actugaming.net/gta-6-guide-complet-832971/
+    - https://vice-city.app/
+    - "Reddit r/GTA6 · YouTube · GitHub · X @RockstarGames · Instagram @rockstargames"
+  tier_4_leaks:
+    - https://www.eldorado.gg/blog/grand-theft-auto-en/gta-6-leaks/
+    - https://vgtimes.com/games/gta-6/news/
+    - "Toujours badge leak_unverified, jamais fusionné sans recoupement."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 7. RISQUES & MITIGATIONS
+# ─────────────────────────────────────────────────────────────────────────────
+risks:
+  - { id: R1, risk: "Build à J-1 : données post-launch inexistantes", mitigation: "fact_policy + états post_launch_pending + structure prête à MAJ" }
+  - { id: R2, risk: "Sites SEO/spam se faisant passer pour des sources officielles", mitigation: "Tiering des sources, privilégier Rockstar/Support/Store + presse recoupée" }
+  - { id: R3, risk: "Metascore 99 = instantané du 18/11, évolutif", mitigation: "Horodater, libeller 'à la date du…', re-vérifier en S1/S6" }
+  - { id: R4, risk: "Confusion illustration IA / screenshot officiel", mitigation: "constitution.image_honesty + crédits sur chaque page" }
+  - { id: R5, risk: "Pas de synthèse musicale réelle ni d'audio sous licence", mitigation: "Signaux originaux NumPy+lameenc, étiquetés 'ambiance synthétique'" }
+  - { id: R6, risk: "Aperçu in-app sandbox : CDN / polices / Leaflet externes bloqués", mitigation: "CSS inline critique, fallbacks systèmes, SVG inline, dégradation gracieuse" }
+  - { id: R7, risk: "Dépendances pip non persistées dans le snapshot", mitigation: "tools/make_audio.py documente pip install numpy lameenc ; seuls les MP3 générés sont livrés" }
+  - { id: R8, risk: "Volume ~60 pages + ~100 images > temps de réponse", mitigation: "Lots de 3 pages / 10 assets, reprise via state.json" }
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 8. QA & DÉPLOIEMENT
+# ─────────────────────────────────────────────────────────────────────────────
+qa_matrix:
+  breakpoints: [320, 768, 1024, 1440, 2560]
+  accessibility: "WCAG 2.1 AA — contraste 4.5:1, focus visible, ARIA, alt, clavier"
+  seo: "Title/Description/Keywords, OG, Twitter Card, JSON-LD VideoGame, canonical, hreflang fr/en, sitemap.xml, robots.txt"
+  performance: "loading=lazy, width/height, CSS critique inline, fonts preload, minification"
+  links: "0 lien interne cassé, URLs relatives"
+deployment:
+  vercel: vercel.json
+  netlify: netlify.toml
+  github_pages: .github/workflows/deploy.yml
+  local: "npm run dev → http://localhost:3000 (tools/serve.js, bind 0.0.0.0)"
+  workspace_download: "Ajouter /download-workspace à l'URL de la session Agent Mode"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 9. CHECKPOINTS DE VALIDATION (résumé exécutable)
+# ─────────────────────────────────────────────────────────────────────────────
+checkpoints:
+  CP0: "S0 — arborescence + workflow valides → CONTINUER S1"
+  CP1: "S1 — research_data.json sourcé et statué → CONTINUER S2"
+  CP2: "S2 — 10 JPG + 10 MP3 + 4 CSS + 2 JS + research_data.json amendé → CONTINUER S3"
+  CP3: "S3 — homepage + composants globaux → CONTINUER S4"
+  CP4: "S4 — 7 groupes de pages, CONTINUER entre chaque → CONTINUER S5"
+  CP5: "S5 — carte / filtres / quiz / recherche → CONTINUER S6"
+  CP6: "S6 — QA + SEO + sitemap → CONTINUER S7"
+  CP7: "S7 — README final + livraison → FIN"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 10. AMENDEMENT RECHERCHE S3 — 18/11/2026 (homepage définitive)
+# ─────────────────────────────────────────────────────────────────────────────
+research_s3:
+  at: "2026-11-18"
+  state: S3
+  objective: "Intégrer la passe temps réel dans la homepage et research_data.json."
+  surfaces: [web, presse_accreditee, forums, YouTube, GitHub, Reddit, "X / social", Rockstar_officiel]
+  searches: 17
+  direct_fetches: 16
+  facts_added: 20
+  sources_proposed: 21
+  totals:
+    facts: 303
+    sections: 20
+    sources_registered: 135
+    contradictions_and_arbitrations: 18
+    mega_prompt_corrections: 16
+  assets:
+    images: "10 JPG S3 haute qualité (IMG011–IMG020), 1920x1080 / 1280x1920, q95 progressif ; 20 JPG au total."
+    audio: "2 MP3 S3 originaux (AUD011–AUD012) ; 12 MP3 au total dans le lecteur local."
+    per_response_quota: "10 images / 2 audios générés : ≤ 10 de chaque."
+    forbidden_files: 0
+  policy: >-
+    OFFICIEL réservé aux sources primaires Rockstar / Sony / Xbox ; PRESSE · 18/11
+    pour les relevés accrédités ou directs ; COMMUNAUTÉ pour forums, GitHub,
+    YouTube, Reddit et réseaux sociaux ; SPOILER pour missions, codes, fins et
+    routes 6 étoiles ; EN ATTENTE · 19/11 pour toute donnée post-launch.
+  arbitrations:
+    - "Codes de coffre : GameSpot randomisés vs PlayStationInfo mission-specific → aucune liste universelle."
+    - "Scores : OpenCritic 98 / 63 critiques vs Metacritic 99 / 146 et autres snapshots → chaque chiffre horodaté, jamais fusionné."
+    - "Firmware PS5 14.23 et patch 01.002.001 : presse, sans notes Rockstar → aucun day-one patch annoncé."
+    - "Embargo 11:00 GMT : reconstruction Insider Gaming / forums, pas un horaire Rockstar officiel."
+  deliverables:
+    - index.html
+    - en/index.html
+    - assets/js/main.js
+    - assets/js/search.js
+    - assets/js/utils.js
+    - assets/css/s3_home.css
+    - research_s3_addendum.md
+    - robots.txt
+    - sitemap.xml
+    - manifest.json
+    - tools/patch_research_s3.py
+    - tools/check_s3.py
+  qa:
+    node_check: "7 fichiers JS"
+    json_yaml: "research_data.json, state.json, manifest.json, package.json, workflow_master.yaml"
+    links: "node tools/check_links.js → 0 lien interne cassé"
+    forbidden_formats: 0
+    countdown: "J-1 fonctionnel → « Lancer le Guide » après le 19/11/2026"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 11. AMENDEMENT RECHERCHE S4 — BUILD_CONTENT_PAGES (groupe G1 Histoire)
+# ─────────────────────────────────────────────────────────────────────────────
+research_s4:
+  at: "2026-11-18"
+  state: S4
+  batch: G1
+  pages: [pages/histoire/index.html, pages/histoire/synopsis.html, pages/histoire/missions.html]
+  facts_added: 21
+  sources_added: 10
+  totals: {facts: 324, sections: 20, sources_registered: 145, missions: 93, chapters: 5}
+  chapter_structure:
+    - {n: 1, title: "Just Like Paradise", missions: 22}
+    - {n: 2, title: "Paradise Lost", missions: 13}
+    - {n: 3, title: "Tits Ass Drug Money", missions: 26}
+    - {n: 4, title: "Vice City, Baby", missions: 25}
+    - {n: 5, title: "Top of the World, Ma", missions: 7}
+  media: "10 JPG photoréalistes cinématographiques (assets/images/story), q95 progressif, 0 PNG/SVG/WebP."
+  policy: "Bios Rockstar = official ; listes de missions et durées = press_confirmed ; capacités et fins multiples = speculative/community."
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 231 références", forbidden: 0}
+  next: G2
+
+research_s4_g2:
+  at: "2026-11-18"
+  state: S4
+  batch: G2
+  pages: [pages/personnages/index.html, pages/personnages/lucia.html, pages/personnages/secondaires.html]
+  facts_added: 16
+  sources_added: 8
+  cast: "9 noms officiels + Wyman (Ultimate) ; aucun antagoniste officialisé"
+  media: "10 JPG photoréalistes (assets/images/characters), q95 progressif"
+  arbitrations:
+    - "Distribution : Root + Santangeli confirmés ; Perez via TGA ; Jason non confirmé"
+    - "Théories d'antagoniste : speculative uniquement"
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 365 références"}
+  next: G3
+
+research_s4_g3:
+  at: "2026-11-18"
+  state: S4
+  batch: G3
+  pages: [pages/carte/vice-city.html, pages/armes/index.html, pages/vehicules/index.html]
+  facts_added: 27
+  sources_added: 12
+  facts_total: 367
+  sources_total: 165
+  districts_official: ["Peacock Bay", "Southside", "Tequesta", "Tisha-Wocka", "Stockyard", "Ocean Beach"]
+  outside: "Waning Sands (Leonard County), ville séparée"
+  unconfirmed_names: "Little Havana, Little Haiti/La Perle, Viceport, Vice Point, Rockridge, Starfish Island (fuites 2022)"
+  mechanics: "portage 2 armes longues + 2 armes de poing, coffre-arsenal, arme visible, 3 paliers de vol, WAINK, traceur, Pay 'n' Spray"
+  media: "9 JPG photoréalistes (assets/images/{vicecity,weapons,vehicles}), q95 progressif ; 10e image en échec + quota atteint"
+  arbitrations:
+    - "Aucune vitesse maximale ni classement de dégâts publié : rien de chiffré n'est affiché"
+    - "« 300 véhicules » et noms de modèles hors Ultimate Edition = community"
+    - "Liste complète des armes derrière SpoilerToggle, badge EN ATTENTE · 19/11"
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 502 références", html_pages: 11}
+  next: G4
+
+research_s4_g4:
+  at: "2026-11-18"
+  state: S4
+  batch: G4
+  pages: [pages/police/index.html, pages/economie/index.html, pages/activites/index.html]
+  facts_added: 31
+  sources_added: 17
+  facts_total: 398
+  sources_total: 182
+  wanted_system: "6 étoiles ; crime signalé uniquement par témoin ou alarme ; 4 états d'étoiles ; identifiants visage/tenue/véhicule/équipier + arme et vidéosurveillance"
+  escalation: "1-2 patrouilles non létales, 3 K-9, 4-5 SWAT+hélico, 6 militaire"
+  economy: "banque / liquide perdable / butin à receleur ; dépôt ATM uniquement ; coffre vitesse vs rendement ; receleurs spécialisés"
+  media: "10 JPG photoréalistes (assets/images/{police,economie,activites}), q95 progressif"
+  arbitrations:
+    - "Agences et véhicules de police = community (aucun guide Rockstar)"
+    - "Entreprises, revenus passifs, braquages à plusieurs millions : non repris, derrière SpoilerToggle"
+    - "Tennis, zoo, parachute : community (visibles mais jouabilité non confirmée)"
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 667 références", html_pages: 14}
+  next: G5
+
+research_s4_g5:
+  at: "2026-11-18"
+  state: S4
+  batch: G5
+  pages: [pages/musique/index.html, pages/online/index.html, pages/codes/index.html]
+  facts_added: 30
+  sources_added: 15
+  facts_total: 428
+  sources_total: 197
+  radio: "6 stations officialisées le 08/10/2026 (Flash FM, Cocoteo FM, Back Country Radio, AfroBank FM, The Chamber 106.6, Dirty South Classics), 18 titres confirmés"
+  album: "GTA VI: The Album, 34 titres, 19/11/2026 ; score de Justice, 30 pistes, 11/12/2026"
+  online: "solo au lancement, aucun mode en ligne annoncé, GTA Online maintenu, rumeurs 2027 = community"
+  cheats: "0 code officiel au 18/11/2026 ; listes circulantes identifiées comme codes GTA V recyclés"
+  media: "10 JPG photoréalistes (assets/images/{musique,online,codes}), q95 progressif"
+  arbitrages:
+    - "Aucun code de triche publié : politique de refus explicite"
+    - "Noms de stations issus de fuites = community, derrière SpoilerToggle"
+    - "Titres de stations ≠ album ≠ bande originale : trois listes séparées"
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 830 références", html_pages: 17}
+  next: G6
+
+research_s4_g6:
+  at: "2026-11-19"
+  state: S4
+  batch: G6
+  pages: [pages/trophees/index.html, pages/secrets/index.html, pages/tips/index.html]
+  facts_added: 37
+  sources_added: 13
+  facts_total: 465
+  sources_total: 210
+  trophies: "55 trophées (28 cachés / 27 visibles), platine « Vice Got a Price! », 2 or, 0 trophée manquable hors méditation chapitre 1"
+  checklist: "≈60 % du vrai contenu ; 200/557 véhicules, 100/255 animaux, 100/125 lieux WAiNK, 33/33 sous-marin"
+  easter_eggs: "uniquement les clins d'œil relevés dans un média officiel, datés ; coordonnées non sourcées = community"
+  media: "10 JPG photoréalistes (assets/images/{trophees,secrets,tips}), q95 progressif"
+  arbitrages:
+    - "Aucun easter egg nommé par Rockstar : distinction prouvé / inventé systématique"
+    - "Trophées cachés à thème : descriptions citées, déclencheurs non divulgués"
+    - "Astuces d'ordre de jeu = community, techniques = press_confirmed"
+  qa: {check: "python3 tools/check_s4.py", links: "0 cassé sur 1030 références", html_pages: 20}
+  next: G7
+
+research_s19:
+  at: "2026-11-19"
+  state: S19
+  event: DAY_MINUS_ONE
+  pages: [pages/police/index.html, pages/economie/index.html, pages/tips/index.html, pages/lancement/index.html, pages/faq/index.html, pages/vehicules/index.html]
+  facts_added: 13
+  sources_added: 10
+  facts_total: 590
+  sources_total: 302
+  sections:
+    - "pages/police#contre-jeu : ce qu'un geste efface vraiment (coiffeur, tenue, masque, véhicule, séparation du duo, zone chaude) + ralentir vaut mieux que tuer"
+    - "pages/economie#erreurs : cinq erreurs d'argent du début de partie + le garde-fou du dépôt"
+    - "pages/tips#premiere-heure : six gestes de la première heure, sans se spoiler"
+    - "pages/lancement#correctifs : 01.002.000 et 01.002.001, vagues de déploiement, troisième correctif possible"
+    - "pages/faq#sauvegarde : pause, veille, Quick Resume et session propre"
+    - "pages/vehicules#repeindre : repeindre n'est pas changer de voiture"
+  seo: "32 pages : titres ≤ 68 caractères, descriptions ≤ 165 caractères, & bruts échappés"
+  media: "10 JPG photoréalistes (assets/images/{police×2,economie,lancement,tips,news,vehicles,faq,quiz,characters}), 1920×1080 q86 progressif ; 2 orphelins réaffectés, 2 fichiers morts supprimés"
+  qa:
+    checks: "check_s2, check_s3, check_s4 (29 pages, 248 JPG contrôlés), audit_s6 (32 pages, 0/0), check_links (0 cassé), check_images_unique (451/451), nesting HTML 0 erreur, 8/8 JS, YAML valide"
+  next: "Publication 19/11 — surveillance du day-one patch et collecte des retours de première heure"
+
+research_s20:
+  at: "2026-11-19"
+  state: S20
+  event: LAUNCH_DAY
+  pages: [pages/lancement/index.html, pages/faq/index.html, pages/tips/index.html, pages/economie/index.html, pages/news/index.html, pages/reviews/index.html]
+  facts_added: 9
+  sources_added: 7
+  facts_total: 599
+  sources_total: 309
+  sections:
+    - "pages/lancement#ouverture-mondiale : la vague par fuseau (NZ 11:00 UTC > Paris 23:00 UTC > US East 05:00 > US West 08:00) et retours NZ"
+    - "pages/faq#cloud : Xbox One par le cloud uniquement (préréglage Series S, 30 fps), quota Game Pass, pas de PC"
+    - "pages/tips#tir : marqueur rouge = mort, jaune = blessé ; silencieux ; partie non létale"
+    - "pages/economie#butin : butin potentiel et niveau de sécurité sur la carte, un seul protagoniste suffit souvent"
+    - "pages/news#ouverture : l'ouverture a commencé, faux chiffre Metacritic, ampleur en un chiffre daté"
+    - "pages/reviews#lancement-notes : confirmé / non vérifié le soir du 18"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif (news×2, economie, tips, faq, police, lancement, collectibles, musique, online)"
+  qa:
+    checks: "check_s2 ✓, check_s3 ✓, check_s4 ✓ (29 pages, 258 JPG), audit_s6 ✓ (32 pages 0/0), check_links ✓ (2306 réf.), check_images_unique ✓ (461/461), nesting 0 erreur, titres ≤ 68, descriptions ≤ 165, 0 & brut, 0 ancre cassée"
+  next: "Suivi du day-one patch et des retours européens ; aucune page à ajouter tant que Rockstar n'a rien publié"
+
+research_s21:
+  at: "2026-11-19"
+  state: S21
+  event: DAY_ONE_PULSE
+  pages: [pages/faq/index.html, pages/lancement/index.html, pages/divers/index.html]
+  facts_added: 5
+  sources_added: 4
+  facts_total: 604
+  sources_total: 313
+  sections:
+    - "pages/faq#depannage-jour-j : cinq symptômes réellement signalés (audio 1-5 s, pop-in, chutes de fps, image floue, plantages) et remèdes joueurs, sans correctif officiel"
+    - "pages/lancement#jour-j : frame rate machine par machine d'après les mesures relayées (Pro stable, Series X propre, PS5 base dans la vingtaine haute, Series S la plus instable)"
+    - "pages/divers#vignette : ce qui ne se règle pas (vignette) et ce qui se règle (flou de mouvement), plus le test d'entrée HDMI"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif"
+  status: "aucun correctif officiel publié au 19/11 ; tout le dépannage est badgé COMMUNAUTÉ"
+  qa: "CP2 ✓, CP3 ✓, CP4 ✓ (29 pages, 268 JPG), audit 32 pages 0/0, 471/471 images uniques, 0 lien cassé, 0 ancre cassée, 0 titre > 70"
+  next: "Surveiller la publication d'un premier correctif post-lancement sur le Rockstar Support et documenter les correctifs confirmés seulement"
+
+research_s22:
+  at: "2026-11-19"
+  state: S22
+  event: FINALIZE_PUBLICATION
+  pages: [index.html, "30 pages de contenu", pages/legal/mentions-legales.html, pages/legal/confidentialite.html]
+  facts_added: 0
+  sources_added: 0
+  facts_total: 604
+  sources_total: 313
+  domain: "https://gta-6.duckdns.org"
+  hosting: "GitHub Pages (CNAME + .nojekyll, deploy.yml sur main)"
+  sections:
+    - "Publication : CNAME, .nojekyll, canonical/og:url/hreflang absolus, JSON-LD absolutisé"
+    - "sitemap.xml 32 URLs (404.html exclu) ; robots.txt avec blocage des crawlers IA"
+    - "pages/legal : mentions légales (éditeur direct, contact gta-6@gmail.com, GitHub Pages, non-affiliation) et confidentialité (aucune collecte, aucun cookie, aucun analytics)"
+    - "en/ supprimé — site monolingue français, hreflang fr + x-default"
+    - "Contenu COMMUNAUTÉ purgé (13 sections retirées, 24 rebadgées) ; prix en euros retirés"
+  media: "aucun nouveau média ; 14 JPG inutilisés déplacés dans assets/images/_archives/"
+  qa: "check_s2 ✓, check_s3 ✓, check_s4 ✓ (29 pages, 268 JPG), audit_s6 ✓ (33 pages, 0/0, 32 URLs de sitemap), check_links ✓ (2246 réf.), check_images_unique ✓ (459/459), nesting 0 erreur, 0 COMMUNAUTÉ, 0 prix en euros, 200 sur les 2 pages légales"
+  next: "Déploiement : Settings → Pages → GitHub Actions, domaine custom gta-6.duckdns.org + Enforce HTTPS ; DuckDNS A → 185.199.108-111.153"
+
+research_s23:
+  at: "2026-11-19"
+  state: S23
+  event: DAY_ONE_WATCH
+  pages: [pages/news/index.html, pages/lancement/index.html, pages/police/index.html, pages/economie/index.html, pages/tips/index.html, pages/outils/index.html, pages/faq/index.html]
+  facts_added: 19
+  sources_added: 16
+  facts_total: 623
+  sources_total: 329
+  sections:
+    - "pages/news#firmware : firmware PS5 26.07-14.23.00 obligatoire (≈1,3 Go, 17/11) et mise à jour pré-lancement Xbox (≈2,2 Go rapporté)"
+    - "pages/lancement#notes : 01.002.000 (≈1,07 Go) et 01.002.001 (602,5 Mo PS5 / ≈1,59 Go Xbox), aucune note officielle, aucun mode performance"
+    - "pages/police#reconnaissance : Focus sans mini-carte, balisage des gardes, alarme avant caméras, désescalade à une étoile"
+    - "pages/economie#receleurs : Moses, Buck, Tyrone, Yasmani + ordres de grandeur + plafond de liquide + spoiler chapitre 4 masqué"
+    - "pages/tips#reflexes : tenue dans le coffre, portière comme arme, stats qui se perdent, aucun rejeu de mission"
+    - "pages/outils#firmware-outil : liste de vérification du soir de sortie en quatre étapes"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif (fixes×3, police×2, economie×2, tips×3), 0 audio"
+  status: "OUT-24 (cartes communautaires) documenté mais non publié — décision B4 prime"
+  qa: "CP2 ✓, CP3 ✓ (623 faits / 329 sources vérifiés), CP4 ✓ (29 pages, 277 JPG), audit 33 pages 0/0, 2256 réf. 0 cassée, 468/468 images uniques, nesting 0 erreur, search.js sans lien mort"
+  next: "Surveiller la publication de notes de version officielles et l'arrivée éventuelle d'un mode performance"
+
+research_s24:
+  at: "2026-11-19"
+  state: S24
+  event: NIGHT_ONE_MEASUREMENTS
+  pages: [pages/news/index.html, pages/lancement/index.html, pages/divers/index.html, pages/faq/index.html]
+  facts_added: 8
+  sources_added: 8
+  facts_total: 631
+  sources_total: 337
+  sections:
+    - "pages/news#mesures : 1440p sur PS5/PS5 Pro/Series X, 720p+FSR4 sur Series S, cadences mesurées console par console"
+    - "pages/news#reseau : panne PlayStation du 18/11 (876 → 4 000+ signalements) et dépannage ordonné"
+    - "pages/lancement#cadences : qui tient réellement 30 fps, entretien comme réglage de performance"
+    - "pages/divers#upscaling : PSSR vs TAA maison vs FSR 4, et ce que cela change à l'écran"
+    - "pages/faq#entretien : tableau symptôme → cause → geste, point de méthode sur les impressions contradictoires"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif (dossier perf/), 0 audio"
+  status: "aucune capture officielle reproduite ; chiffres = mesures Digital Foundry, jamais de moyenne inventée"
+  qa: "CP2 ✓, CP3 ✓ (631 faits / 337 sources), CP4 ✓ (29 pages, 287 JPG), audit 33 pages 0/0, 2266 réf. 0 cassée, 478/478 images uniques, nesting 0 erreur, search.js sans lien mort"
+  next: "Suivre l'éventuelle publication de notes de version et l'arrivée d'un mode performance"
+
+research_s25:
+  at: "2026-11-19"
+  state: S25
+  event: LAUNCH_DAY_VERIFICATION
+  pages: [pages/news/index.html, pages/lancement/index.html, pages/economie/index.html, pages/tips/index.html, pages/faq/index.html]
+  facts_added: 15
+  sources_added: 10
+  facts_total: 646
+  sources_total: 347
+  sections:
+    - "pages/news#chiffres : aucun chiffre de ventes officiel ; 17,07 M / 1,65 Md$ = estimation Sensor Tower au 18/11 ; record GTA V à battre"
+    - "pages/lancement#direct : direct YouTube de 24 h, ce qu'il n'apporte pas, risque de spoilers"
+    - "pages/economie#keys : quatre paquets des Keys (~900 $), vente immédiate, piège de la boutique, cartes et chapeaux"
+    - "pages/tips#premier-jour : cache sous le plancher, Dolores, portes blanches/rouges, bonnes actions, péage et point de non-retour"
+    - "pages/faq#chiffres-faq : officiel / estimé / projeté"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif (sales×3, tips×3, economie×2, news×2), 0 audio"
+  status: "aucun chiffre officiel publié par Take-Two ou Rockstar au 19/11 — le site l'écrit plutôt que de recopier une estimation"
+  qa: "CP2 ✓, CP3 ✓ (646 faits / 347 sources), CP4 ✓ (29 pages, 297 JPG), audit 33 pages 0/0, 2276 réf. 0 cassée, 488/488 images uniques, nesting 0 erreur, search.js sans lien mort"
+  next: "Attendre le premier communiqué de ventes de Take-Two ; surveiller la première note de version publiée sur Rockstar Support"
+
+research_s26:
+  at: "2026-11-20"
+  state: S26
+  event: PUBLISH_PACKAGE
+  pages: [pages/tips/index.html, pages/vehicules/index.html, pages/news/index.html]
+  facts_added: 7
+  sources_added: 4
+  facts_total: 653
+  sources_total: 351
+  sections:
+    - "pages/tips#se-deplacer : aucune téléportation ; changer de personnage (gratuit), bus et trains, RydeMe/Paradise Taxi +100 $ ; autopilote ; pourboire 5 $"
+    - "pages/vehicules#voler : scanner WAiNK d'abord, traceur standard vs avancé, cloneur de clé, SUV et camion, conteneurs maritimes"
+    - "pages/news#etat-j2 : toujours aucune note de version, aucun chiffre de ventes, aucun mode performance, solo strict"
+  media: "10 JPG photoréalistes 1920×1080 q86 progressif (deplacement/), 0 audio"
+  package: "out/publish/ — 33 HTML, 7 CSS, 8 JS, 498 JPG, 12 MP3, CNAME, .nojekyll, sitemap, robots, manifest, 404 + SHA256SUMS.txt"
+  qa: "CP2 ✓, CP3 ✓ (653 faits / 351 sources), CP4 ✓ (29 pages, 307 JPG), audit 33 pages 0/0, 2286 réf. 0 cassée, 498/498 images uniques, nesting 0 erreur"
+  next: "Publication par l'utilisateur (GitHub Actions + domaine + DNS) ; veille des notes de version et du premier communiqué de ventes"
+
+research_s27:
+  at: "2026-11-20"
+  state: S27
+  event: PRE_LAUNCH_HARDENING
+  pages: [pages/lancement/index.html, pages/tips/index.html, pages/economie/index.html, pages/outils/index.html]
+  facts_added: 9
+  sources_added: 11
+  facts_total: 662
+  sources_total: 362
+  sections:
+    - "pages/lancement#avant-minuit : firmware PS5 26.07-14.23.00 obligatoire, aucun patch de lancement confirmé, coût d'un préchargement interrompu"
+    - "pages/tips#argent-et-coffre : perte du liquide à la mort, coffre du véhicule personnel, entraînement quotidien plafonné (statut communauté)"
+    - "pages/economie#route-argent : rentabilité par chapitre (1 000 $ → ~205 000 $), plongées de Kenton, repaires de gangs"
+    - "pages/outils#cartes-communautaires : ViceRoute (MIT), Leonida Atlas (AGPL), GTA6 Atlas, awesome-gta-6 — outils, pas faits"
+  media: "10 JPG photoréalistes 1920x1080 q86 progressif (depart/), 0 audio"
+  cleanup: "7 entrées de recherche mortes retirées, search.js sans requête vers research_data.json, 12 JPG archivés exclus du paquet"
+  package: "out/publish/ — 603 fichiers, 508 JPG référencés, SHA256SUMS régénéré"
+  qa: "CP2 ✓, CP3 ✓ (662 faits / 362 sources), CP4 ✓ (317 JPG), audit 33 pages 0/0, 2259 réf. 0 cassée, 508/508 images uniques, paquet 0 lien cassé 0 ancre morte"
+  next: "Publication par l'utilisateur ; veille des notes de version et du premier communiqué de ventes"
+
+research_s28:
+  at: "2026-11-20"
+  state: S28
+  event: PUBLICATION_AUDIT
+  pages: [pages/secrets/index.html, pages/news/index.html]
+  facts_added: 4
+  sources_added: 6
+  facts_total: 666
+  sources_total: 368
+  sections:
+    - "pages/secrets#premieres-trouvailles : oeuf de la tour (SEC-33), Bigfoot/lac Cottonmouth (SEC-34), maison de Belville (SEC-35), lieux fermés = emplacements réservés"
+    - "pages/news#correctif-tailles : tailles réelles 1.002 (1,07 Go PS5 / 2,18 Go Xbox) et aveu de la correction"
+  corrections:
+    - "tailles 1.002 corrigées à 4 endroits (erreur d'arrondi 2,2 Go attribuée aux deux consoles)"
+    - "accueil : canonical et og:url vers / au lieu de /index.html ; sitemap aligné"
+  media: "10 JPG photoréalistes 1920x1080 q86 progressif (jour1/), 0 audio, 0 archive"
+  package: "out/publish/ — 613 fichiers, 518 JPG référencés, SHA256SUMS régénéré"
+  workflow: "out/ exclu de l'artefact GitHub Actions ; garde-fous zip/png/svg/_archives ajoutés"
+  qa: "SEO 33/33 canonical+og:url exacts, 32 URL sitemap = 32 pages, 479 img conformes, 2269 réf. 0 cassée, 518/518 images uniques, audit 0/0, JSON-LD 33/33"
+  next: "Publication par l'utilisateur ; veille des notes de version et du premier communiqué de ventes"
+
+research_s29:
+  at: "2026-11-20"
+  state: S29
+  event: COMPLETION_TRUTH
+  pages: [pages/collectibles/index.html]
+  facts_added: 5
+  sources_added: 5
+  facts_total: 671
+  sources_total: 373
+  sections:
+    - "pages/collectibles#seuils-reels : seuils exacts du 100 % (MIS-47), méditations doublées et cartes conservées (MIS-48), stand de tir et drones (MIS-49), écart trophées/100 % (MIS-50)"
+  corrections:
+    - "taille Xbox de 01.002.000 rétrogradée de « confirmé » à « rapporté » (REL-35)"
+  media: "10 JPG photoréalistes 1920x1080 q86 progressif (completion/), 0 audio"
+  package: "out/publish/ — SHA256SUMS régénéré"
+  qa: "CP2 ✓ CP3 ✓ (671/373) CP4 ✓ (337 JPG) audit 33 pages 0/0, 528/528 images uniques, 0 lien cassé"
+  next: "Publication par l'utilisateur ; veille des notes de version officielles et du premier chiffre de ventes"
+
+research_s30:
+  at: "2026-11-20"
+  state: S30
+  event: LAUNCH_NIGHT_VERIFICATION
+  pages: [pages/news/index.html, pages/reviews/index.html]
+  facts_added: 7
+  sources_added: 8
+  facts_total: 678
+  sources_total: 380
+  sections:
+    - "pages/news#soir-de-sortie : panne PSN datée (REL-36), rapports de crash non confirmés (REL-37), dépannage Xbox rapporté (REL-38), espace disque 212 vs 225,3 Go (REL-39), audience Twitch (CMT-35)"
+    - "pages/reviews#record-99 : 99 Metacritic sur 147 critiques (REV-28), déclaration de Sam Houser et ses limites (REV-29)"
+  media: "9 JPG photoréalistes 1920x1080 q86 progressif (soir-lancement/), 0 audio"
+  package: "out/publish/ — SHA256SUMS régénéré"
+  qa: "CP2 ✓ CP3 ✓ (678/380) CP4 ✓ (346 JPG) audit 33 pages 0/0, 537/537 images uniques, 0 lien cassé"
+  next: "Veille : notes de version officielles, premier chiffre de ventes Take-Two, contenu en ligne"
+
+research_s31:
+  at: "2026-11-20"
+  state: S31
+  event: PERF_AND_SETTINGS
+  pages: [pages/tips/index.html, pages/reviews/index.html]
+  facts_added: 5
+  sources_added: 6
+  facts_total: 683
+  sources_total: 386
+  sections:
+    - "pages/tips#reglages-et-metier : réglages et contreparties (TIP-64), règles de métier fourrière/butin/point de contrôle (TIP-65), Focus mode et gestes (TIP-66)"
+    - "pages/reviews#30-fps-explique : mesures par console (REV-30), explication Rockstar de Marc Chambers (REV-31)"
+  media: "9 JPG photoréalistes 1920x1080 q86 progressif (reglages/), 0 audio"
+  package: "out/publish/ — SHA256SUMS régénéré"
+  qa: "CP2 ✓ CP3 ✓ (683/386) CP4 ✓ (355 JPG) audit 33 pages 0/0, 546/546 images uniques, 0 lien cassé"
+  next: "Veille : notes de version officielles, premier chiffre de ventes Take-Two, contenu en ligne"

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /dist/
+Disallow: /.github/
+
+# Site statique : guide non officiel, contenus originaux (tous droits réservés).
+# Les robots d'entraînement IA ne sont pas autorisés à réutiliser les illustrations
+# et les textes sans autorisation écrite.
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://gta-6.duckdns.org/sitemap.xml

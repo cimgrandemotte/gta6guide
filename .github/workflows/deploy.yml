@@ -1,0 +1,73 @@
+name: Deploy GTA VI Ultimate Guide to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate workflow master
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 -c "import yaml; yaml.safe_load(open('workflow_master.yaml')); print('workflow_master.yaml OK')"
+
+      - name: Check internal links
+        run: node tools/check_links.js
+
+      - name: Verify asset policy (JPG / MP3 only, no ZIP / PDF)
+        run: |
+          if find . -path ./.git -prune -o \( -iname '*.zip' -o -iname '*.pdf' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.avif' -o -iname '*.wav' \) -print | grep -q .; then
+            echo '::error::Format interdit détecté dans le projet'; exit 1
+          fi
+          echo 'Politique des assets respectée.'
+
+      - name: Prepare publishable site
+        run: |
+          # On ne publie que ce qui doit être servi : ni outils internes, ni données de
+          # recherche, ni documentation, ni archives d'images. `tar` est utilisé plutôt que
+          # `rsync` pour ne dépendre d'aucun paquet supplémentaire sur le runner.
+          mkdir -p _site
+          tar -cf - \
+            --exclude='./.git' --exclude='./_site' --exclude='./.github' \
+            --exclude='./tools' --exclude='./dist' --exclude='./node_modules' \
+            --exclude='./assets/images/_archives' \
+            --exclude='./research_data.json' --exclude='./research_*.md' \
+            --exclude='./qa_report_s6.json' --exclude='./state.json' \
+            --exclude='./workflow_master.yaml' --exclude='./design_system.md' \
+            --exclude='./package.json' --exclude='./netlify.toml' --exclude='./vercel.json' \
+            --exclude='./README.md' --exclude='./.gitignore' \
+            . | tar -xf - -C _site
+          du -sh _site
+          test -f _site/CNAME && test -f _site/.nojekyll && test -f _site/index.html
+          test ! -d _site/tools || { echo '::error::tools/ ne doit pas être publié'; exit 1; }
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+          # CNAME et .nojekyll sont copiés à la racine de l'artefact par l'étape précédente
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

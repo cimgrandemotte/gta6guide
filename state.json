@@ -1,0 +1,1215 @@
+{
+  "project": "GTA VI — The Ultimate Guide",
+  "workflow_ref": "workflow_master.yaml",
+  "current_state": "S31",
+  "status": "COMPLETE",
+  "gate": "FIN",
+  "last_updated": "2026-11-20T08:30:00+01:00",
+  "timezone": "Europe/Paris",
+  "release_date": "2026-11-19",
+  "history": [
+    {
+      "state": "S0",
+      "name": "INIT",
+      "result": "COMPLETE",
+      "at": "2026-11-18T12:30:00+01:00",
+      "deliverables": [
+        "workflow_master.yaml",
+        "state.json",
+        "package.json",
+        "index.html (placeholder S0)",
+        "README.md (v0)",
+        "tools/serve.js",
+        "tools/make_audio.py",
+        "tools/check_links.js",
+        "vercel.json",
+        "netlify.toml",
+        ".github/workflows/deploy.yml",
+        "36 dossiers + .gitkeep"
+      ]
+    },
+    {
+      "state": "S1",
+      "name": "RESEARCH",
+      "result": "COMPLETE",
+      "at": "2026-11-18T13:05:00+01:00",
+      "deliverables": [
+        "research_data.json",
+        "research_sources.md",
+        "research_findings.md",
+        "tools/build_research_data.py",
+        "workflow_master.yaml (section research_s1 + FSM à jour)"
+      ],
+      "metrics": {
+        "facts": 201,
+        "sections": 19,
+        "sources": 86,
+        "contradictions_arbitrated": 10,
+        "mega_prompt_corrections": 8,
+        "post_launch_pending_topics": 12,
+        "by_status": {
+          "official": 52,
+          "press_confirmed": 93,
+          "community": 26,
+          "leak_unverified": 7,
+          "post_launch_pending": 20,
+          "speculative": 3
+        }
+      },
+      "notes": "Embargo critiques levé le 18/11/2026 ~11:00 GMT : gameplay désormais largement vérifiable. Deux listes de trophées incompatibles arbitrées. Cast long du prompt tracé jusqu'à la carte 'imagined' de leonidaverse.com. Aucun fait post-launch fabriqué. Amendement S2 du 18/11/2026 : 283 faits / 20 sections / 114 sources, source_url ajouté à chaque fait, listes de presse post-embargo intégrées comme press_confirmed."
+    },
+    {
+      "state": "S2",
+      "name": "DESIGN_SYSTEM",
+      "result": "COMPLETE",
+      "at": "2026-11-18T18:20:00+01:00",
+      "deliverables": [
+        "assets/css/design_system.css",
+        "assets/css/animations.css",
+        "assets/css/components.css",
+        "assets/css/responsive.css",
+        "assets/js/components.js",
+        "assets/js/animations.js",
+        "assets/images/** : 10 JPG haute qualité (IMG001–IMG010)",
+        "assets/audio/** : 10 MP3 originaux (AUD001–AUD010)",
+        "design_system.md",
+        "assets/images/CREDITS.md",
+        "assets/audio/CREDITS.md",
+        "research_s2_addendum.md",
+        "research_sources.md (amendement S2)",
+        "research_findings.md (amendement S2)",
+        "tools/optimize_images.py",
+        "tools/patch_research_s2.py",
+        "tools/check_s2.py",
+        "research_data.json amendé (source_url + 82 faits S2 + 93 missions structurées)",
+        "workflow_master.yaml (section research_s2 + FSM S2 COMPLETE)"
+      ],
+      "metrics": {
+        "css_files": 4,
+        "js_files": 2,
+        "jpg": 10,
+        "mp3": 10,
+        "jpg_dimensions": [
+          "1920x1080 (8 paysages)",
+          "1280x1920 (2 personnages 2:3)"
+        ],
+        "facts": 283,
+        "sections": 20,
+        "sources": 114,
+        "contradictions_arbitrated": 14,
+        "mega_prompt_corrections": 12,
+        "by_status": {
+          "official": 52,
+          "press_confirmed": 173,
+          "speculative": 4,
+          "community": 30,
+          "leak_unverified": 7,
+          "post_launch_pending": 17
+        },
+        "s2_press_missions": 93,
+        "forbidden_files": 0,
+        "breakpoints": [
+          320,
+          768,
+          1024,
+          1440,
+          2560
+        ]
+      },
+      "notes": "Recherche web + fetch direct des articles du 18/11 (GameSpot cheats/tips/robberies, Press-Start cheats/économie/trophées/93 missions/100% checklist, TrueAchievements, Sportskeeda, Independent, Newswav, OpenCritic, Gadgets360, RockstarINTEL, GitHub). Direction artistique orange/violet/pastel traduite en tokens CSS. Aucune liste de presse promue « official ». 0 PNG/SVG/WebP/AVIF/WAV/ZIP/PDF."
+    },
+    {
+      "state": "S3",
+      "name": "BUILD_CORE_PAGES",
+      "result": "COMPLETE",
+      "at": "2026-11-18T14:53:49+01:00",
+      "deliverables": [
+        "index.html (homepage définitive FR)",
+        "en/index.html (overview EN + hreflang réels)",
+        "assets/js/main.js / search.js / utils.js",
+        "assets/css/s3_home.css",
+        "Navbar, Footer, SearchEngine, Breadcrumbs, ItemCard, StatBar, Tooltip, SpoilerToggle, CopyButton, BackToTop, CookieBanner, AudioPlayer",
+        "JSON-LD VideoGame, OG, Twitter Card, canonical, hreflang fr/en/x-default",
+        "robots.txt, sitemap.xml, manifest.json",
+        "research_s3_addendum.md",
+        "research_data.json amendé S3 : 303 faits / 135 sources / 20 sections / source_url 303-303",
+        "assets/images/** : 10 JPG S3 haute qualité (IMG011–IMG020)",
+        "assets/audio/** : 2 MP3 S3 originaux (AUD011–AUD012)",
+        "assets/images/CREDITS.md et assets/audio/CREDITS.md amendés",
+        "tools/optimize_images_s3.py, make_audio_s3.py, patch_research_s3.py, check_s3.py",
+        "workflow_master.yaml (section research_s3 + FSM S3 COMPLETE)"
+      ],
+      "metrics": {
+        "html_pages": 2,
+        "css_files": 5,
+        "js_files": 5,
+        "jpg": 20,
+        "mp3": 12,
+        "jpg_s3": 10,
+        "mp3_s3": 2,
+        "facts": 303,
+        "sections": 20,
+        "sources": 135,
+        "contradictions_arbitrated": 18,
+        "mega_prompt_corrections": 16,
+        "s2_press_missions": 93,
+        "source_url_coverage": "303/303",
+        "broken_internal_links": 0,
+        "forbidden_files": 0,
+        "web_searches": 17,
+        "direct_fetches": 16
+      },
+      "notes": "Recherche multi-surfaces S3 intégrée avec badges OFFICIEL / PRESSE · 18/11 / COMMUNAUTÉ / SPOILER / EN ATTENTE. GameSpot safe codes randomisés, PlayStationInfo codes mission-specific, OpenCritic 98-63, Metacritic 99-146, firmware PS5 14.23, patch 01.002.001 sans notes, embargo non officialisé. 0 nouvelle donnée promue official sans source primaire. CSS sans réseau, JS local, countdown inline, lecteur MP3 sans autoplay."
+    },
+    {
+      "state": "S4",
+      "name": "BUILD_CONTENT_PAGES",
+      "result": "COMPLETE",
+      "at": "2026-11-19T00:40:00+01:00",
+      "groups_done": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6"
+      ],
+      "deliverables_g1": [
+        "pages/histoire/index.html",
+        "pages/histoire/synopsis.html",
+        "pages/histoire/missions.html",
+        "assets/css/s4_pages.css",
+        "assets/images/story/*.jpg (10 JPG)",
+        "research_s4_addendum.md",
+        "tools/patch_research_s4.py",
+        "tools/optimize_images_s4.py",
+        "tools/check_s4.py"
+      ],
+      "metrics_g1": {
+        "pages": 3,
+        "jpg_s4": 10,
+        "jpg_total": 30,
+        "mp3_total": 12,
+        "facts": 324,
+        "sources": 145,
+        "chapters": 5,
+        "missions": 93,
+        "broken_links": 0,
+        "forbidden_files": 0
+      },
+      "deliverables_g2": [
+        "pages/personnages/index.html",
+        "pages/personnages/lucia.html",
+        "pages/personnages/secondaires.html",
+        "assets/images/characters/*.jpg (10 JPG G2)",
+        "tools/patch_research_s4_g2.py"
+      ],
+      "metrics_g2": {
+        "pages": 3,
+        "jpg_s4": 20,
+        "jpg_total": 40,
+        "facts": 340,
+        "sources": 153,
+        "broken_links": 0,
+        "forbidden_files": 0
+      },
+      "deliverables_g3": [
+        "pages/carte/vice-city.html",
+        "pages/armes/index.html",
+        "pages/vehicules/index.html",
+        "assets/images/vicecity/*.jpg (3 JPG)",
+        "assets/images/weapons/*.jpg (2 JPG)",
+        "assets/images/vehicles/*.jpg (4 JPG)",
+        "tools/patch_research_s4_g3.py",
+        "tools/optimize_images_s4.py (--g3-only)",
+        "tools/check_s4.py (GROUPS G3)",
+        "assets/css/s4_pages.css (.s4-note)",
+        "nav 7 entrées alignée sur 11 pages HTML",
+        "sitemap.xml (+3)",
+        "assets/js/search.js (+7 entrées)",
+        "assets/images/CREDITS.md (lot G3)",
+        "research_s4_addendum.md (sections G2 et G3)"
+      ],
+      "metrics_g3": {
+        "pages": 3,
+        "jpg_s4": 29,
+        "jpg_total": 49,
+        "mp3_total": 12,
+        "facts": 367,
+        "sources": 165,
+        "images_generated": 9,
+        "image_generation_failures": 1,
+        "broken_links": 0,
+        "forbidden_files": 0
+      },
+      "deliverables_g4": [
+        "pages/police/index.html",
+        "pages/economie/index.html",
+        "pages/activites/index.html",
+        "assets/images/police/*.jpg (4 JPG)",
+        "assets/images/economie/*.jpg (3 JPG)",
+        "assets/images/activites/*.jpg (3 JPG)",
+        "tools/patch_research_s4_g4.py",
+        "tools/optimize_images_s4.py (--g4-only)",
+        "tools/check_s4.py (GROUPS G4)",
+        "assets/css/s4_pages.css (.s4-steps)",
+        "nav 9 entrées alignée sur 14 pages HTML",
+        "sitemap.xml (+3)",
+        "assets/js/search.js (+9 entrées)",
+        "assets/images/CREDITS.md (lot G4)",
+        "research_s4_addendum.md (section G4)"
+      ],
+      "metrics_g4": {
+        "pages": 3,
+        "jpg_s4": 39,
+        "jpg_total": 59,
+        "mp3_total": 12,
+        "facts": 398,
+        "sources": 182,
+        "images_generated": 10,
+        "broken_links": 0,
+        "forbidden_files": 0
+      },
+      "deliverables_g5": [
+        "pages/musique/index.html",
+        "pages/online/index.html",
+        "pages/codes/index.html",
+        "assets/images/musique/*.jpg (4 JPG)",
+        "assets/images/online/*.jpg (3 JPG)",
+        "assets/images/codes/*.jpg (3 JPG)",
+        "tools/patch_research_s4_g5.py",
+        "tools/optimize_images_s4.py (--g5-only)",
+        "tools/check_s4.py (GROUPS G5)",
+        "nav 12 entrées alignée sur 17 pages HTML",
+        "sitemap.xml (+3)",
+        "assets/js/search.js (+7 entrées)",
+        "assets/images/CREDITS.md (lot G5)",
+        "research_s4_addendum.md (section G5)"
+      ],
+      "metrics_g5": {
+        "pages": 3,
+        "jpg_s4": 49,
+        "jpg_total": 69,
+        "mp3_total": 12,
+        "facts": 428,
+        "sources": 197,
+        "images_generated": 10,
+        "broken_links": 0,
+        "forbidden_files": 0,
+        "cheats_published": 0
+      },
+      "deliverables_g6": [
+        "pages/trophees/index.html",
+        "pages/secrets/index.html",
+        "pages/tips/index.html",
+        "assets/images/trophees/*.jpg (3 JPG)",
+        "assets/images/secrets/*.jpg (4 JPG)",
+        "assets/images/tips/*.jpg (3 JPG)",
+        "tools/patch_research_s4_g6.py",
+        "tools/optimize_images_s4.py (--g6-only)",
+        "tools/check_s4.py (GROUPS G6)",
+        "nav 15 entrées alignée sur 20 pages HTML",
+        "sitemap.xml (+3)",
+        "assets/js/search.js (+7 entrées)",
+        "assets/images/CREDITS.md (lot G6)",
+        "research_s4_addendum.md (section G6)"
+      ],
+      "metrics_g6": {
+        "pages": 3,
+        "jpg_s4": 59,
+        "jpg_total": 79,
+        "mp3_total": 12,
+        "facts": 465,
+        "sources": 210,
+        "images_generated": 10,
+        "broken_links": 0,
+        "forbidden_files": 0
+      },
+      "deliverables_g7": [
+        "pages/outils/index.html",
+        "pages/divers/index.html",
+        "pages/faq/index.html",
+        "assets/images/outils/*.jpg (3 JPG)",
+        "assets/images/divers/*.jpg (3 JPG)",
+        "assets/images/faq/*.jpg (4 JPG)",
+        "tools/patch_research_s4_g7.py",
+        "tools/optimize_images_s4.py (--g7-only)",
+        "tools/check_s4.py (GROUPS G7, assertion 21 HTML)",
+        "nav +3 entrées (Outils/Divers/FAQ) sur 21 sous-pages + accueil + en/index.html",
+        "sitemap.xml (+3)",
+        "assets/js/search.js (+10 entrées)",
+        "assets/images/CREDITS.md (lot G7, IMG080–IMG089)",
+        "research_s4_addendum.md (section G7)"
+      ],
+      "metrics_g7": {
+        "pages": 3,
+        "jpg_s4": 69,
+        "jpg_total": 89,
+        "mp3_total": 12,
+        "facts": 489,
+        "sources": 225,
+        "images_generated": 10,
+        "broken_links": 0,
+        "forbidden_files": 0
+      }
+    },
+    {
+      "state": "S5",
+      "name": "INTERACTIVE_FEATURES",
+      "result": "COMPLETE",
+      "at": "2026-11-19T01:40:00+01:00",
+      "deliverables": [
+        "assets/js/map_leonida.js",
+        "assets/js/s5_checklist.js",
+        "assets/js/s5_quiz.js",
+        "assets/css/s5_interactive.css",
+        "pages/carte/index.html",
+        "pages/collectibles/index.html",
+        "pages/quiz/index.html",
+        "tools/patch_research_s5.py",
+        "assets/images/{map,collectibles,quiz}/*.jpg (10 JPG)",
+        "CREDITS lot IMG090–IMG099"
+      ],
+      "metrics_s5": {
+        "pages": 3,
+        "jpg_total": 99,
+        "mp3_total": 12,
+        "facts": 507,
+        "sources": 240,
+        "broken_links": 0,
+        "forbidden_files": 0,
+        "map_places": 28,
+        "checklist_items": 16,
+        "quiz_questions": 30
+      }
+    },
+    {
+      "state": "S6",
+      "name": "QA_AND_POLISH",
+      "result": "COMPLETE",
+      "at": "2026-11-19T02:15:00+01:00",
+      "deliverables": [
+        "tools/audit_s6.py",
+        "tools/build_s6.py",
+        "qa_report_s6.json",
+        "pages/qa/index.html",
+        "assets/images/qa/*.jpg (5 JPG)",
+        "dist/app.min.css + dist/js/*.min.js",
+        "robots.txt (Disallow /dist/)",
+        "manifest.json (vérifié)",
+        "sitemap.xml (33 URLs)",
+        "CREDITS lot IMG100–IMG104"
+      ],
+      "metrics_s6": {
+        "pages_audited": 27,
+        "errors": 0,
+        "warnings": 0,
+        "jpg_total": 104,
+        "broken_links": 0,
+        "contrast_pairs": 8,
+        "sitemap_urls": 33,
+        "forbidden_files": 0,
+        "css_ko_min": 68,
+        "js_ko_min": 79
+      }
+    },
+    {
+      "state": "S7",
+      "name": "FINAL_DELIVERY",
+      "result": "COMPLETE",
+      "at": "2026-11-19T02:50:00+01:00",
+      "deliverables": [
+        "README.md (réécrit, 8 sections)",
+        "pages/final/index.html",
+        "assets/images/final/*.jpg (5 JPG)",
+        "assets/images/CREDITS.md (IMG105–IMG109 + récapitulatif des lots)",
+        "research_s4_addendum.md (section S7)",
+        "nav Livraison sur 28 pages",
+        "sitemap.xml (34 URLs)",
+        "assets/js/search.js (+1 entrée)"
+      ],
+      "metrics_s7": {
+        "html": 28,
+        "jpg_total": 109,
+        "mp3_total": 12,
+        "facts": 513,
+        "sources": 246,
+        "internal_refs": 1670,
+        "broken_links": 0,
+        "forbidden_files": 0,
+        "audit_errors": 0
+      }
+    },
+    {
+      "state": "S8",
+      "name": "REVIEWS",
+      "result": "COMPLETE",
+      "at": "2026-11-19T03:20:00+01:00",
+      "event": "Levée d'embargo presse 18/11/2026 11:00 UTC",
+      "deliverables": [
+        "pages/reviews/index.html",
+        "assets/images/reviews/*.jpg (5 JPG)",
+        "tools/patch_research_s8.py",
+        "nav Reviews sur 29 pages",
+        "sitemap.xml (36 URLs)",
+        "assets/js/search.js (+2 entrées)",
+        "corrections final/quiz (affirmation « personne n'y a joué »)",
+        "accueil : section Reviews actualisée"
+      ],
+      "metrics_s8": {
+        "metacritic_ps5": 99,
+        "metacritic_reviews": 109,
+        "opencritic": "98-99",
+        "recommend_rate": "100%",
+        "jpg_total": 114,
+        "facts": 527,
+        "sources": 253,
+        "broken_links": 0
+      }
+    },
+    {
+      "state": "S9",
+      "name": "LAUNCH_NIGHT",
+      "result": "COMPLETE",
+      "at": "2026-11-18T15:40:00+01:00",
+      "deliverables": [
+        "pages/lancement/index.html",
+        "tools/patch_research_s9.py",
+        "research_s4_addendum.md (section S9)",
+        "5 JPG lancement (IMG115–IMG119)",
+        "check_s4.py (groupe S9)",
+        "nav Lancement sur 30 pages",
+        "sitemap 36 URLs",
+        "search.js +2 entrées",
+        "CREDITS IMG115–IMG119",
+        "README + state.json + workflow_master.yaml"
+      ],
+      "metrics": {
+        "pages_content": 28,
+        "html_files": 30,
+        "facts": 540,
+        "sources": 261,
+        "jpg": 119,
+        "internal_refs": 1847,
+        "broken_links": 0,
+        "audit_pages": 30,
+        "audit_errors": 0,
+        "audit_warnings": 0,
+        "sitemap_urls": 36
+      },
+      "notes": "Nuit de lancement : première heure, anti-spoiler 12 h, technique Digital Foundry sur versions commerciales (Series X ~1440p/30 fps, lows ~20-21 fps, Series S ~720p, PS5 1440p/23 fps low, ~180 ms de latence), astuce NZ, bug de préchargement Xbox. Gate maintenu : FIN."
+    },
+    {
+      "state": "S10",
+      "name": "REAL_ASSETS_AND_MAPS",
+      "result": "COMPLETE",
+      "at": "2026-11-18T18:30:00+01:00",
+      "deliverables": [
+        "tools/check_images_unique.py",
+        "assets/images/objets/ (203 JPG)",
+        "assets/images/animaux/ (27 JPG)",
+        "assets/images/cartes/ (3 cartes)",
+        "pages/armes/index.html (51 fiches)",
+        "pages/vehicules/index.html (152 fiches)",
+        "pages/collectibles/index.html (27 espèces)",
+        "pages/carte/index.html#cartes-reelles",
+        "CREDITS.md S10",
+        "research_s4_addendum.md (S10)",
+        "search.js +4",
+        "10 illustrations IA S10"
+      ],
+      "metrics": {
+        "html": 30,
+        "jpg_total": 362,
+        "object_images": 203,
+        "animal_images": 27,
+        "cards": 3,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 30,
+        "audit_errors": 0
+      },
+      "notes": "Corrections demandées : aucune image réutilisée (362 refs / 362 images, porte bloquante), 3 vraies cartes de Leonida + 4 cartes interactives liées, catalogues visuels réels des armes (51), véhicules (152) et espèces (27) depuis les fiches communautaires GTABase."
+    },
+    {
+      "state": "S11",
+      "name": "POST_LAUNCH_RADIO_AND_PROPERTIES",
+      "result": "COMPLETE",
+      "at": "2026-11-18T19:15:00+01:00",
+      "deliverables": [
+        "pages/musique/index.html#apres-lancement",
+        "pages/secrets/index.html#lieux-reels",
+        "assets/images/lieux/ (4 captures officielles)",
+        "10 illustrations IA S11",
+        "research_data.json (+4 faits / +3 sources)",
+        "CREDITS.md S11",
+        "research_s4_addendum.md S11",
+        "compteurs 544 / 264"
+      ],
+      "metrics": {
+        "facts": 544,
+        "sources": 264,
+        "images_total": 370,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 30,
+        "audit_errors": 0
+      },
+      "notes": "Relevé d'écoute des premières heures : plus de vingt stations (statut communauté, tableau séparé), radio à pied + podcasts. Propriété : garages uniquement, planques débloquées par l'histoire, aucun commerce ni revenu confirmé."
+    },
+    {
+      "state": "S12",
+      "name": "PUBLISH_READY",
+      "result": "COMPLETE",
+      "at": "2026-11-18T21:10:00+01:00",
+      "deliverables": [
+        "pages/lancement/index.html#verifications",
+        "pages/reviews/index.html#technique",
+        "pages/economie/index.html#cash-sur-soi",
+        "pages/police/index.html#identifier",
+        "pages/carte/index.html#lecture-carte",
+        "pages/trophees/index.html#platine",
+        "pages/online/index.html#solo-ferme",
+        "pages/faq/index.html#fiabilite",
+        "pages/musique/index.html#album-suite",
+        "pages/histoire/index.html#chronologie",
+        "10 illustrations IA S12",
+        "sitemap.xml reconstruit (34 URLs relatives)",
+        "research_data.json (+10 faits / +6 sources)"
+      ],
+      "metrics": {
+        "facts": 554,
+        "sources": 270,
+        "images_total": 384,
+        "duplicates": 0,
+        "broken_links": 0,
+        "missing_image_refs": 0,
+        "audit_pages": 30
+      }
+    },
+    {
+      "state": "S13",
+      "name": "FINAL_PUBLISH",
+      "result": "COMPLETE",
+      "at": "2026-11-18T22:40:00+01:00",
+      "deliverables": [
+        "pages/news/index.html (31e page, fil du lancement)",
+        "404.html + redirect Netlify/Vercel",
+        "10 illustrations IA S13",
+        "sitemap 35 URLs",
+        "search.js + banner accueil",
+        "research_data.json (+4 faits / +4 sources)"
+      ],
+      "metrics": {
+        "facts": 558,
+        "sources": 274,
+        "html_pages": 31,
+        "images_total": 394,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 31,
+        "sitemap_urls": 35
+      }
+    },
+    {
+      "state": "S14",
+      "name": "DEEP_MECHANICS",
+      "result": "COMPLETE",
+      "at": "2026-11-18T23:55:00+01:00",
+      "deliverables": [
+        "pages/histoire/index.html#chapitres-missions",
+        "pages/police/index.html#six-preuves",
+        "pages/tips/index.html#duo-braquage",
+        "pages/trophees/index.html#manquables-reels",
+        "pages/activites (kayak confirmé)",
+        "pages/news/index.html (3 mécaniques)",
+        "9 illustrations IA S14",
+        "research_data.json (+5 faits / +4 sources)"
+      ],
+      "metrics": {
+        "facts": 563,
+        "sources": 277,
+        "html_pages": 32,
+        "images_total": 403,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 32
+      }
+    },
+    {
+      "state": "S15",
+      "name": "PLAYER_FEEDBACK",
+      "result": "COMPLETE",
+      "at": "2026-11-19T00:20:00+01:00",
+      "deliverables": [
+        "pages/reviews/index.html#joueurs",
+        "pages/lancement/index.html#jour-un",
+        "pages/tips (limite de port)",
+        "pages/armes/index.html#trio",
+        "pages/vehicules/index.html#toucher",
+        "pages/divers/index.html#confort",
+        "pages/economie + secrets (figures)",
+        "9 illustrations IA S15",
+        "research_data.json (+5 faits / +5 sources)"
+      ],
+      "metrics": {
+        "facts": 568,
+        "sources": 282,
+        "html_pages": 32,
+        "images_total": 411,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 32
+      }
+    },
+    {
+      "state": "S16",
+      "name": "SAFE_CODES_AND_TROUBLESHOOTING",
+      "result": "COMPLETE",
+      "at": "2026-11-19T01:05:00+01:00",
+      "deliverables": [
+        "pages/codes/index.html#coffres (5 combinaisons)",
+        "pages/lancement/index.html#depannage",
+        "figures économie/carte/histoire/police/collectibles/activites/news",
+        "10 illustrations IA S16",
+        "research_data.json (+3 faits / +4 sources)"
+      ],
+      "metrics": {
+        "facts": 571,
+        "sources": 285,
+        "html_pages": 32,
+        "images_total": 421,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 32
+      }
+    },
+    {
+      "state": "S17",
+      "name": "FINAL_POLISH",
+      "result": "COMPLETE",
+      "at": "2026-11-19T02:05:00+01:00",
+      "deliverables": [
+        "404.html corrigé (balise </head> dupliquée)",
+        "pages/lancement/index.html#minuit",
+        "pages/faq/index.html#stockage",
+        "10 illustrations IA S17 réparties sur 10 pages",
+        "research_data.json (+3 faits / +2 sources)"
+      ],
+      "metrics": {
+        "facts": 574,
+        "sources": 287,
+        "html_pages": 32,
+        "images_total": 431,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 32,
+        "html_nesting_errors": 0
+      }
+    },
+    {
+      "state": "S18",
+      "name": "SETTINGS",
+      "result": "COMPLETE",
+      "at": "2026-11-19T03:00:00+01:00",
+      "deliverables": [
+        "pages/faq/index.html#reglages (table console/TV/jeu)",
+        "pages/outils (visée et zone morte)",
+        "10 illustrations IA S18 réparties sur 10 pages",
+        "research_data.json (+3 faits / +5 sources)"
+      ],
+      "metrics": {
+        "facts": 577,
+        "sources": 292,
+        "html_pages": 32,
+        "images_total": 441,
+        "duplicates": 0,
+        "broken_links": 0,
+        "audit_pages": 32,
+        "html_nesting_errors": 0
+      }
+    },
+    {
+      "state": "S19",
+      "name": "DAY_MINUS_ONE",
+      "result": "COMPLETE",
+      "at": "2026-11-19T04:30:00+01:00",
+      "deliverables": [
+        "pages/police#contre-jeu + 2 figures",
+        "pages/economie#erreurs",
+        "pages/tips#premiere-heure",
+        "pages/lancement#correctifs + figure",
+        "pages/faq#sauvegarde",
+        "pages/vehicules#repeindre",
+        "titres SEO ≤ 68 car. sur 32 pages",
+        "&amp; échappés dans 5 pages",
+        "en/index.html : figure + CSS s4",
+        "research_data.json (590 faits / 302 sources)",
+        "CREDITS, README, addendum S19"
+      ],
+      "metrics": {
+        "facts": 590,
+        "sources": 302,
+        "images_total": 451,
+        "pages": 32,
+        "titles_over_70": 0,
+        "descriptions_over_165": 0
+      },
+      "notes": "Passe day-minus-one : contre-jeu policier (POL-36/37/38), erreurs d'argent (ECN-28/29), correctifs 01.002.000/01.002.001 (LAU-36/37), pause et Quick Resume (FAQ-12/13), première heure (TIP-53/54/55), repeindre vs changer (VEH-67). 10 JPG générés, 2 réaffectés depuis les orphelins, 2 orphelins supprimés du disque. Compteurs harmonisés : 590 faits, 302 sources, 451 JPG, 32 pages."
+    },
+    {
+      "state": "S20",
+      "name": "LAUNCH_DAY",
+      "result": "COMPLETE",
+      "at": "2026-11-19T06:15:00+01:00",
+      "deliverables": [
+        "pages/lancement#ouverture-mondiale",
+        "pages/faq#cloud",
+        "pages/tips#tir",
+        "pages/economie#butin",
+        "pages/news#ouverture",
+        "pages/reviews#lancement-notes",
+        "10 JPG S20",
+        "research_data.json (599 faits / 309 sources)",
+        "CREDITS, README, addendum S20"
+      ],
+      "metrics": {
+        "facts": 599,
+        "sources": 309,
+        "images_total": 461,
+        "pages": 32,
+        "titles_over_70": 0,
+        "descriptions_over_165": 0,
+        "raw_ampersands": 0,
+        "broken_anchors": 0
+      },
+      "notes": "Ouverture mondiale : NZ 11:00 UTC 18/11 (LAU-38), cloud Xbox One au préréglage Series S avec quota horaire (LAU-39/40), ordres de grandeur Sensor Tower et Twitch (LAU-41), statut du « 99 Metacritic » (REV-27), braquages de boutiques en sécurité faible et un seul protagoniste (TIP-56), silencieux (TIP-57), marqueur rouge/jaune (TIP-58), dimension simulation (TIP-59)."
+    },
+    {
+      "state": "S21",
+      "name": "DAY_ONE_PULSE",
+      "result": "COMPLETE",
+      "at": "2026-11-19T08:40:00+01:00",
+      "deliverables": [
+        "pages/faq#depannage-jour-j",
+        "pages/lancement#jour-j",
+        "pages/divers#vignette",
+        "10 JPG S21",
+        "research_data.json (604 faits / 313 sources)",
+        "CREDITS, README, addendum S21, state, YAML"
+      ],
+      "metrics": {
+        "facts": 604,
+        "sources": 313,
+        "images_total": 471,
+        "pages": 32
+      },
+      "notes": "Retours d'ouverture : coupures audio 1-5 s en conduite dense, pop-in, chutes de frame rate (DIA-01), remèdes joueurs (DIA-02), risque de perte de sauvegarde (DIA-03), vignette non désactivable et flou de mouvement réglable (DIA-04), mesures DF par machine (DIA-05)."
+    },
+    {
+      "state": "S22",
+      "name": "FINALIZE / PUBLICATION",
+      "result": "COMPLETE",
+      "at": "2026-11-19T12:00:00+01:00",
+      "deliverables": [
+        "CNAME + .nojekyll",
+        "canonical/og:url/hreflang absolus sur 31 pages, JSON-LD absolutisé sur 30",
+        "en/ supprimé (66 refs nav retirées)",
+        "sitemap.xml 32 URLs (30 pages de contenu + 2 pages légales, 404.html exclu)",
+        "robots.txt : blocage crawlers IA + Sitemap absolu",
+        "pages/legal/mentions-legales.html + pages/legal/confidentialite.html",
+        "prix en euros retirés, contenu COMMUNAUTÉ purgé (13 sections)",
+        "README, CREDITS, addendum S22, state.json, workflow_master.yaml"
+      ],
+      "metrics": {
+        "facts": 604,
+        "sources": 313,
+        "images_total": 457,
+        "images_archivees": 14,
+        "pages_html": 33,
+        "pages_contenu": 30,
+        "sitemap_urls": 32,
+        "liens_internes": 2246
+      },
+      "notes": "Publication prête : domaine gta-6.duckdns.org (GitHub Pages, CNAME + .nojekyll), aucun analytics, tous droits réservés, pas d'édition anglaise, spoilers masqués par défaut, contenu communautaire retiré, prix en euros retirés. 14 JPG devenus inutilisés déplacés dans assets/images/_archives/ (non publiés)."
+    },
+    {
+      "state": "S23",
+      "name": "DAY_ONE_WATCH",
+      "result": "COMPLETE",
+      "at": "2026-11-19T18:00:00+01:00",
+      "deliverables": [
+        "pages/news#firmware",
+        "pages/lancement#notes",
+        "pages/police#reconnaissance",
+        "pages/economie#receleurs",
+        "pages/tips#reflexes",
+        "pages/outils#firmware-outil",
+        "10 JPG S23",
+        "research_data.json (623 faits / 329 sources)",
+        "research_s23_addendum.md",
+        "state.json",
+        "workflow_master.yaml"
+      ],
+      "metrics": {
+        "facts": 623,
+        "sources": 329,
+        "images_total": 468,
+        "pages_html": 33
+      },
+      "notes": "Veille du jour de sortie : firmware PS5 26.07-14.23.00 obligatoire (≈1,3 Go, 17/11), correctifs 01.002.000 (13/11, ≈1,07 Go) et 01.002.001 (dès 16/11, 602,5 Mo PS5 / ≈1,59 Go Xbox), aucune note officielle publiée. Aucun mode performance annoncé : 30 fps maintenus partout. Sections ajoutées sur la reconnaissance policière, les quatre receleurs, quatre réflexes de terrain et une liste de vérification du soir de sortie."
+    },
+    {
+      "state": "S24",
+      "name": "NIGHT_ONE_MEASUREMENTS",
+      "result": "COMPLETE",
+      "at": "2026-11-19T23:30:00+01:00",
+      "deliverables": [
+        "pages/news#mesures",
+        "pages/news#reseau",
+        "pages/lancement#cadences",
+        "pages/divers#upscaling",
+        "pages/faq#entretien",
+        "10 JPG S24",
+        "research_data.json (631 faits / 337 sources)",
+        "research_s24_addendum.md",
+        "state.json",
+        "workflow_master.yaml",
+        "README",
+        "CREDITS"
+      ],
+      "metrics": {
+        "facts": 631,
+        "sources": 337,
+        "images_total": 478,
+        "pages_html": 33
+      },
+      "notes": "Mesures de la première nuit : 1440p sur PS5/Pro/Series X, 720p+FSR4 sur Series S, PS5 Pro quasi verrouillée à 30, Series S 18-19 en explosion. Rockstar explique l'absence de mode 40/60 (budget de 33 ms, CPU de la Pro). Panne PSN du 18/11 documentée avec dépannage ordonné."
+    },
+    {
+      "state": "S25",
+      "name": "LAUNCH_DAY_VERIFICATION",
+      "result": "COMPLETE",
+      "at": "2026-11-19T23:59:00+01:00",
+      "deliverables": [
+        "pages/news#chiffres",
+        "pages/lancement#direct",
+        "pages/economie#keys",
+        "pages/tips#premier-jour",
+        "pages/faq#chiffres-faq",
+        "10 JPG S25",
+        "research_data.json (646 faits / 347 sources)",
+        "research_s25_addendum.md",
+        "state.json",
+        "workflow_master.yaml",
+        "README",
+        "CREDITS"
+      ],
+      "metrics": {
+        "facts": 646,
+        "sources": 347,
+        "images_total": 488,
+        "pages_html": 33
+      },
+      "notes": "Vérification du jour de sortie : aucun chiffre de ventes officiel au 19/11 (17,07 M = estimation Sensor Tower arrêtée au 18/11), aucun mode performance, toujours aucune note de version. Astuces vérifiées : paquets des Keys, cache sous le plancher, Dolores et le Focus, portes blanches/rouges, péage 5 $, point de non-retour Key Lento."
+    },
+    {
+      "state": "S26",
+      "name": "PUBLISH_PACKAGE",
+      "result": "COMPLETE",
+      "at": "2026-11-20T02:00:00+01:00",
+      "deliverables": [
+        "pages/tips#se-deplacer",
+        "pages/vehicules#voler",
+        "pages/news#etat-j2",
+        "10 JPG S26",
+        "research_data.json (653 faits / 351 sources)",
+        "out/publish/ (paquet prêt à déployer)",
+        "research_s26_addendum.md",
+        "state.json",
+        "workflow_master.yaml",
+        "README",
+        "CREDITS"
+      ],
+      "metrics": {
+        "facts": 653,
+        "sources": 351,
+        "images_total": 510,
+        "images_in_pages": 498,
+        "pages_html": 33,
+        "publish_files": 605
+      },
+      "notes": "Finalisation pour publication par l'utilisateur : déplacement (pas de téléportation, trois méthodes, autopilote, pourboire), vol de véhicules (WAiNK, traceurs, cloneur de clé, conteneurs), état vérifié au soir du 19 (toujours aucune note de version). Paquet out/publish/ + SHA256SUMS généré. Corrections de publication : 42 liens vers des fichiers de travail remplacés, chemins de crédits absolutisés, 2 ancres mortes réparées, paquet out/publish/ (605 fichiers) + SHA256SUMS."
+    },
+    {
+      "state": "S27",
+      "name": "PRE_LAUNCH_HARDENING",
+      "result": "COMPLETE",
+      "at": "2026-11-20T03:30:00+01:00",
+      "deliverables": [
+        "pages/lancement#avant-minuit",
+        "pages/tips#argent-et-coffre",
+        "pages/economie#route-argent",
+        "pages/outils#cartes-communautaires",
+        "10 JPG S27",
+        "research_data.json (662 faits / 362 sources)",
+        "out/publish/ (603 fichiers)",
+        "research_s27_addendum.md"
+      ],
+      "metrics": {
+        "facts": 662,
+        "sources": 362,
+        "images_total": 508,
+        "images_files": 520,
+        "pages_html": 33,
+        "publish_files": 603
+      },
+      "notes": "Firmware PS5 26.07-14.23.00 obligatoire (18/11), aucun patch de lancement confirmé, habitudes de début de partie (argent/coffre/entraînement), route de l'argent par chapitre, cartes open source. Nettoyage : 7 entrées de recherche mortes, search.js sans requête réseau, 12 JPG archivés sortis du paquet. Badges « RETOURS DE JOUEURS » / « OUTILS DE FANS », édition S27 sur les 33 pages, compteurs 662/362 partout."
+    },
+    {
+      "state": "S28",
+      "name": "PUBLICATION_AUDIT",
+      "result": "COMPLETE",
+      "at": "2026-11-20T04:45:00+01:00",
+      "deliverables": [
+        "pages/secrets#premieres-trouvailles",
+        "pages/news#correctif-tailles",
+        "10 JPG S28",
+        "research_data.json (666 faits / 368 sources)",
+        "out/publish/ (613 fichiers)",
+        "research_s28_addendum.md"
+      ],
+      "metrics": {
+        "facts": 666,
+        "sources": 368,
+        "images_files": 528,
+        "images_in_pages": 518,
+        "pages_html": 33,
+        "publish_files": 613,
+        "internal_refs": 2269
+      },
+      "notes": "Audit de publication : canonical/og:url normalisés (accueil -> /), sitemap aligné sur l'ensemble exact des 32 pages, og:image et JSON-LD vérifiés, 479 img sans alt/dims manquants, out/ exclu du workflow Actions (sinon publication en double), aucun ZIP. Correction factuelle des tailles 1.002 (1,07 Go PS5 / 2,18 Go Xbox). Trouvailles du jour 1 au statut community."
+    },
+    {
+      "state": "S29",
+      "name": "COMPLETION_TRUTH",
+      "result": "COMPLETE",
+      "at": "2026-11-20T06:00:00+01:00",
+      "deliverables": [
+        "pages/collectibles#seuils-reels",
+        "10 JPG S29",
+        "research_data.json (671 faits / 373 sources)",
+        "out/publish/",
+        "research_s29_addendum.md"
+      ],
+      "metrics": {
+        "facts": 671,
+        "sources": 373,
+        "images_files": 538,
+        "images_in_pages": 528,
+        "pages_html": 33
+      },
+      "notes": "Seuils réels du 100 % (15/18 séries, 100/125 flamants, 300/397 cascades, 70/80 défis, 200/277 véhicules, 100/255 espèces, 90/100 paniers), méditations comptées double, autorisation stand de tir 5 $, 42 essais de drone sur 14 sites, écart trophées/100 %. Rétrogradation du chiffre Xbox 01.002.000 de confirmé à rapporté (REL-35)."
+    },
+    {
+      "state": "S30",
+      "name": "LAUNCH_NIGHT_VERIFICATION",
+      "result": "COMPLETE",
+      "at": "2026-11-20T07:15:00+01:00",
+      "deliverables": [
+        "pages/news#soir-de-sortie",
+        "pages/reviews#record-99",
+        "9 JPG S30",
+        "research_data.json (678 faits / 380 sources)",
+        "out/publish/",
+        "research_s30_addendum.md"
+      ],
+      "metrics": {
+        "facts": 678,
+        "sources": 380,
+        "images_files": 547,
+        "images_in_pages": 537,
+        "pages_html": 33
+      },
+      "notes": "Soirée de lancement : panne PSN (~45 min le 18/11, pic ~10 000 signalements le 19), codes WS-116449-5, dépannage firmware 14.23 et option hors ligne Xbox, rapports de crash non confirmés, espace 212 vs 225,3 Go, 99 Metacritic sur 147 critiques, déclaration de Sam Houser, audience Twitch 2,5-3,3 M. Toujours aucune note de version ni chiffre de ventes."
+    },
+    {
+      "state": "S31",
+      "name": "PERF_AND_SETTINGS",
+      "result": "COMPLETE",
+      "at": "2026-11-20T08:30:00+01:00",
+      "deliverables": [
+        "pages/tips#reglages-et-metier",
+        "pages/reviews#30-fps-explique",
+        "9 JPG S31",
+        "research_data.json (683 faits / 386 sources)",
+        "out/publish/",
+        "research_s31_addendum.md"
+      ],
+      "metrics": {
+        "facts": 683,
+        "sources": 386,
+        "images_files": 556,
+        "images_in_pages": 546,
+        "pages_html": 33
+      },
+      "notes": "Mesures Digital Foundry (PS5 Pro 30 fps quasi parfait sur 50 h, PS5 avec petites chutes, Series S la plus en difficulté), explication de Marc Chambers (limite CPU, ray tracing de base, PSSR, ombres tracées), réglages avec contreparties (zone morte, flou/OLED, cache, HDCP), règles de métier (fourrière, butin au partenaire, point de contrôle, Focus mode)."
+    }
+  ],
+  "asset_constraints_reminder": {
+    "images": "JPG haute qualité uniquement, photoréaliste / cinématographique / immersif, ≤ 10 par réponse, JAMAIS de SVG ni PNG en tant qu'image",
+    "audio": "MP3 uniquement, ≤ 10 par réponse",
+    "inline_svg": "autorisé uniquement pour l'UI (icônes, logos vectoriels inline), jamais comme fichier image livré"
+  },
+  "next_on_continue": null,
+  "metrics_s2": {
+    "css_files": 4,
+    "js_files": 2,
+    "jpg": 10,
+    "mp3": 10,
+    "jpg_dimensions": [
+      "1920x1080 (8 paysages)",
+      "1280x1920 (2 personnages 2:3)"
+    ],
+    "facts": 283,
+    "sections": 20,
+    "sources": 114,
+    "contradictions_arbitrated": 14,
+    "mega_prompt_corrections": 12,
+    "by_status": {
+      "official": 52,
+      "press_confirmed": 173,
+      "speculative": 4,
+      "community": 30,
+      "leak_unverified": 7,
+      "post_launch_pending": 17
+    },
+    "s2_press_missions": 93,
+    "forbidden_files": 0,
+    "breakpoints": [
+      320,
+      768,
+      1024,
+      1440,
+      2560
+    ]
+  },
+  "metrics_s3": {
+    "html_pages": 2,
+    "css_files": 5,
+    "js_files": 5,
+    "jpg": 20,
+    "mp3": 12,
+    "jpg_s3": 10,
+    "mp3_s3": 2,
+    "facts": 303,
+    "sections": 20,
+    "sources": 135,
+    "contradictions_arbitrated": 18,
+    "mega_prompt_corrections": 16,
+    "by_status": {
+      "official": 53,
+      "press_confirmed": 182,
+      "post_launch_pending": 19,
+      "speculative": 4,
+      "community": 38,
+      "leak_unverified": 7
+    },
+    "breakpoints": [
+      320,
+      768,
+      1024,
+      1440,
+      2560
+    ],
+    "broken_internal_links": 0,
+    "forbidden_files": 0
+  },
+  "metrics_s4": {
+    "groups_total": 7,
+    "groups_done": 7,
+    "pages_done": 20,
+    "pages_target": 20,
+    "facts": 489,
+    "sources": 225,
+    "jpg": 89,
+    "mp3": 12,
+    "broken_internal_links": 0,
+    "forbidden_files": 0,
+    "by_status": {
+      "official": 102,
+      "press_confirmed": 283,
+      "community": 59,
+      "post_launch_pending": 26,
+      "speculative": 12,
+      "leak_unverified": 7
+    }
+  },
+  "completed_states": [
+    "S0",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31"
+  ],
+  "s4": "COMPLETE — 20 pages de contenu, 7 groupes",
+  "metrics_s5": {
+    "pages": 24,
+    "jpg": 99,
+    "mp3": 12,
+    "facts": 507,
+    "sources": 240,
+    "broken_internal_links": 0,
+    "forbidden_files": 0
+  },
+  "metrics_s6": {
+    "pages": 27,
+    "jpg": 104,
+    "mp3": 12,
+    "facts": 513,
+    "sources": 246,
+    "broken_internal_links": 0,
+    "forbidden_files": 0
+  },
+  "metrics_final": {
+    "html_files": 29,
+    "content_pages": 27,
+    "jpgs": 114,
+    "mp3s": 12,
+    "facts": 527,
+    "sources": 253,
+    "internal_references": 1757,
+    "broken_internal_links": 0,
+    "forbidden_files": 0,
+    "qa_errors": 0,
+    "qa_warnings": 0,
+    "sitemap_urls": 36
+  }
+}

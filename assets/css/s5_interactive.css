@@ -1,0 +1,295 @@
+/* ==========================================================================
+   S5 — INTERACTIVE_FEATURES
+   Carte schématique de Leonida, filtres, checklist persistée, quiz.
+   Aucune dépendance externe : tout fonctionne hors ligne dans l'aperçu.
+   ========================================================================== */
+
+/* ── 1. Tableau de bord interactif ─────────────────────────────────────── */
+.s5-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: 1.5rem;
+  margin: 2rem 0 1rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .s5-board { grid-template-columns: minmax(0, 1fr); }
+}
+
+.s5-stage {
+  position: relative;
+  padding: 1rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 90% at 20% 0%, rgba(255, 92, 168, 0.16), transparent 60%),
+    radial-gradient(120% 90% at 90% 100%, rgba(64, 224, 208, 0.14), transparent 60%),
+    #0b0a16;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
+}
+
+.s5-stage__hint {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.s5-schematic { display: block; width: 100%; height: auto; }
+.s5-schematic__land { fill: #14122a; stroke: rgba(255, 255, 255, 0.14); stroke-width: 1.5; }
+.s5-schematic__water { fill: rgba(64, 224, 208, 0.07); }
+.s5-schematic__region { fill: rgba(255, 255, 255, 0.03); stroke: rgba(255, 255, 255, 0.12); stroke-dasharray: 4 5; }
+.s5-schematic__label {
+  fill: rgba(255, 255, 255, 0.72);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+.s5-pin {
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.s5-pin circle { stroke: rgba(10, 8, 20, 0.9); stroke-width: 1.4; }
+.s5-pin:hover, .s5-pin:focus-visible { transform: scale(1.5); outline: none; }
+.s5-pin:focus-visible circle { stroke: #fff; stroke-width: 2; }
+.s5-pin[hidden] { display: none; }
+.s5-pin[data-kind="collectible"] circle { fill: #ff5ca8; }
+.s5-pin[data-kind="activity"] circle { fill: #40e0d0; }
+.s5-pin[data-kind="landmark"] circle { fill: #ffc247; }
+.s5-pin[data-kind="danger"] circle { fill: #ff5f5f; }
+
+/* ── 2. Panneau latéral : recherche + filtres ───────────────────────────── */
+.s5-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.s5-panel h3 { margin: 0; font-size: 1rem; letter-spacing: 0.02em; }
+
+.s5-search { position: relative; }
+.s5-search input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.35);
+  color: inherit;
+  font: inherit;
+}
+.s5-search input:focus-visible { outline: 2px solid #40e0d0; outline-offset: 2px; }
+
+.s5-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.s5-chip {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.38rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.s5-chip:hover { border-color: rgba(64, 224, 208, 0.7); }
+.s5-chip[aria-pressed="true"] {
+  background: linear-gradient(120deg, #ff5ca8, #ff8a3d);
+  border-color: transparent;
+  color: #12091a;
+  font-weight: 600;
+}
+.s5-chip:focus-visible { outline: 2px solid #40e0d0; outline-offset: 2px; }
+
+.s5-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; max-height: 320px; overflow-y: auto; }
+.s5-list__item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+.s5-list__item:hover { border-color: rgba(255, 255, 255, 0.16); }
+.s5-list__item[hidden] { display: none; }
+.s5-list__item:focus-visible { outline: 2px solid #40e0d0; outline-offset: 1px; }
+.s5-list__item b { font-weight: 600; }
+.s5-list__meta { margin-left: auto; font-size: 0.74rem; color: rgba(255, 255, 255, 0.5); white-space: nowrap; }
+
+.s5-count { font-size: 0.82rem; color: rgba(255, 255, 255, 0.6); }
+.s5-empty { padding: 0.6rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
+
+/* ── 3. Checklist persistée ─────────────────────────────────────────────── */
+.s5-progress {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 3;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(11, 10, 22, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.s5-progress__bar { height: 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+.s5-progress__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #40e0d0, #ff5ca8);
+  transition: width 0.3s ease;
+}
+.s5-progress__label { font-size: 0.85rem; color: rgba(255, 255, 255, 0.72); }
+
+.s5-checks { display: grid; gap: 0.4rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.s5-check {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.s5-check:hover { border-color: rgba(64, 224, 208, 0.5); }
+.s5-check:focus-visible { outline: 2px solid #40e0d0; outline-offset: 2px; }
+.s5-check[aria-checked="true"] { background: rgba(64, 224, 208, 0.12); border-color: rgba(64, 224, 208, 0.55); }
+.s5-check[aria-checked="true"] .s5-check__label { text-decoration: line-through; opacity: 0.66; }
+.s5-check__box {
+  flex: 0 0 18px;
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  display: grid; place-items: center;
+  font-size: 12px; line-height: 1;
+  color: #0b0a16;
+}
+.s5-check[aria-checked="true"] .s5-check__box { background: #40e0d0; border-color: #40e0d0; }
+.s5-check__box::after { content: ""; }
+.s5-check[aria-checked="true"] .s5-check__box::after { content: "✓"; }
+.s5-check__label { font-size: 0.9rem; }
+.s5-check__ref { font-size: 0.72rem; color: rgba(255, 255, 255, 0.45); margin-left: 0.35rem; }
+.s5-check[hidden] { display: none; }
+
+.s5-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+
+/* ── 4. Quiz ────────────────────────────────────────────────────────────── */
+.s5-quiz { display: grid; gap: 1rem; padding: 1.4rem; border-radius: 18px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.09); }
+.s5-quiz__top { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: space-between; font-size: 0.85rem; }
+.s5-quiz__meta { display: flex; gap: 0.9rem; color: rgba(255, 255, 255, 0.68); }
+.s5-quiz__timer[data-low="1"] { color: #ff7b7b; font-weight: 700; }
+.s5-quiz__q { font-size: 1.12rem; font-weight: 600; line-height: 1.4; margin: 0; }
+.s5-quiz__opts { display: grid; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.s5-quiz__opt {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.s5-quiz__opt:hover:enabled { border-color: rgba(64, 224, 208, 0.65); }
+.s5-quiz__opt:focus-visible { outline: 2px solid #40e0d0; outline-offset: 2px; }
+.s5-quiz__opt.is-correct { background: rgba(64, 224, 208, 0.2); border-color: #40e0d0; }
+.s5-quiz__opt.is-wrong { background: rgba(255, 95, 95, 0.18); border-color: #ff5f5f; }
+.s5-quiz__opt:disabled { cursor: default; opacity: 0.85; }
+.s5-quiz__fb { font-size: 0.92rem; line-height: 1.5; min-height: 3.2em; padding: 0.7rem 0.9rem; border-radius: 10px; background: rgba(0, 0, 0, 0.28); border-left: 3px solid #ff5ca8; }
+.s5-quiz__fb:empty { visibility: hidden; }
+.s5-quiz__result { display: grid; gap: 0.6rem; }
+.s5-quiz__score { font-size: 1.6rem; font-weight: 700; margin: 0; }
+
+.s5-badge-level { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.55rem; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.25); }
+.s5-badge-level[data-level="facile"] { color: #7ef0c0; border-color: rgba(126, 240, 192, 0.5); }
+.s5-badge-level[data-level="moyen"] { color: #ffc247; border-color: rgba(255, 194, 71, 0.5); }
+.s5-badge-level[data-level="difficile"] { color: #ff7bb0; border-color: rgba(255, 123, 176, 0.5); }
+
+/* ── 5. Divers ──────────────────────────────────────────────────────────── */
+.s5-note { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); }
+.s5-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s5-pin, .s5-progress__fill, .s5-check, .s5-quiz__opt { transition: none !important; }
+}
+
+/* ── 6. S6 — QA : durcissement accessibilité & responsive ────────────────── */
+
+/* 2.5.8 Target Size : toute cible tactile ≥ 24×24 px CSS. */
+.s5-chip,
+.s5-list__item,
+.s5-check,
+.s5-quiz__opt,
+button[data-map-reset],
+button[data-map-copy],
+button[data-check-clear] {
+  min-height: 32px;
+}
+
+/* 2.4.11 Focus Not Obscured : les en-têtes collants ne doivent pas masquer
+   l'élément focalisé. On réserve la hauteur de la barre au défilement d'ancre. */
+:target { scroll-margin-top: 96px; }
+.s5-progress { top: 84px; }
+
+/* 2.4.13 Focus Appearance : indicateur d'au moins 2 px, contraste ≥ 3:1. */
+.s5-chip:focus-visible,
+.s5-list__item:focus-visible,
+.s5-check:focus-visible,
+.s5-quiz__opt:focus-visible,
+.s5-search input:focus-visible {
+  outline: 3px solid #40e0d0;
+  outline-offset: 2px;
+}
+.s5-pin:focus-visible { outline: none; }
+.s5-pin:focus-visible circle {
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
+}
+
+/* 320 px : les grilles passent à une colonne et les libellés restent lisibles. */
+@media (max-width: 360px) {
+  .s5-board { gap: 1rem; }
+  .s5-panel { padding: 0.9rem; }
+  .s5-quiz { padding: 1rem; }
+  .s5-quiz__meta { flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; }
+  .s5-chip { padding: 0.42rem 0.7rem; font-size: 0.8rem; }
+  .s5-schematic__label { font-size: 7px; }
+}
+
+/* 2560 px : on évite les lignes de texte trop longues sur grand écran. */
+@media (min-width: 1800px) {
+  .s5-board { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 2.5rem; }
+  .s5-panel, .s5-quiz { font-size: 1.03rem; }
+}
+
+/* Impression : la carte et les checklists doivent rester lisibles sur papier. */
+@media print {
+  .s5-stage { background: #fff; border-color: #ccc; box-shadow: none; }
+  .s5-pin circle { stroke: #000; }
+  .s5-schematic__label { fill: #000; }
+  .s5-progress { position: static; }
+  .s5-actions, .s5-quiz__fb { display: none; }
+}
